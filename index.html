@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Donghee (Joy) Chae</title>
-<meta name="description" content="Donghee (Joy) Chae — immunoengineering: stem cell immunomodulation, regulated cell death, engineered nanomaterials, environmental immunotoxicology.">
+<meta name="description" content="Donghee (Joy) Chae. Biomedical engineering grounded in immunology: stem cell immunomodulation, engineered nanomaterials, bioinformatics, and environmental immunotoxicology.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,11 +43,13 @@ h1,h2,h3{color:var(--ink);letter-spacing:-.02em}
 /* hero */
 .hero{background:linear-gradient(168deg,#F4F7FC 0%,#FBF7F3 52%,#FFFFFF 100%);padding:78px 0 0;border-bottom:1px solid var(--rule)}
 .hero-grid{display:grid;grid-template-columns:1fr 236px;gap:52px;align-items:center}
+body.no-portrait .hero-grid{grid-template-columns:1fr}
 .kicker{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.02em}
-.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(42px,6.4vw,66px);line-height:1.04;margin:12px 0 0}
-.hero h1 em{font-style:italic;color:var(--soft)}
-.thesis{font-family:var(--disp);font-size:clamp(18px,2.2vw,22px);line-height:1.54;color:#454C57;margin-top:20px;max-width:31em}
-.thesis b{color:var(--ink);font-weight:500;font-style:italic}
+.hero h1{font-family:var(--sans);font-weight:650;font-size:clamp(40px,5.8vw,60px);line-height:1.06;margin:12px 0 0;letter-spacing:-.035em}
+.hero h1 .alt{font-weight:400;font-size:.42em;color:var(--soft);letter-spacing:-.01em;margin-left:15px;white-space:nowrap}
+.thesis{font-family:var(--sans);font-size:14px;line-height:1.62;color:#4A515B;margin-top:16px;max-width:none;letter-spacing:-.005em}
+.thesis p{margin:0 0 3px}
+.thesis b{color:var(--ink);font-weight:650;font-style:normal}
 .hero-meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--soft)}
 .hero-meta a{color:var(--accent);text-decoration:none}
 .hero-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
@@ -128,13 +130,13 @@ ul.b li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5p
 .status.q{background:var(--bg);color:var(--ch)}
 
 /* figures */
-.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:22px}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,168px));gap:14px;margin-top:20px}
 figure{margin:0}
 .ph{border:1.5px dashed #D6DAE1;border-radius:12px;background:var(--tint);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:18px;text-align:center}
 .ph .plus{width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--faint);line-height:1}
-.ph .txt{font-size:12.5px;color:var(--soft);line-height:1.45;max-width:23em}
+.ph .txt{font-size:11.5px;color:var(--soft);line-height:1.4;max-width:23em}
 figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;background:var(--tint2)}
-figcaption{font-size:12.5px;color:var(--soft);margin-top:8px;line-height:1.5}
+figcaption{font-size:11.5px;color:var(--soft);margin-top:7px;line-height:1.45}
 figcaption b{color:var(--ink);font-weight:600}
 .portrait .ph{aspect-ratio:4/5;background:#fff}
 .portrait img{aspect-ratio:4/5;border-radius:16px}
@@ -166,6 +168,37 @@ figcaption b{color:var(--ink);font-weight:600}
 .skill .lv{font-size:12.5px;color:var(--soft);margin-top:5px;display:block}
 .pb{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--soft);line-height:1;transition:all .16s}
 .skill-detail{display:none}
+
+.figs.overview{grid-template-columns:1fr;margin-top:22px;max-width:640px}
+.figs.overview figcaption{font-size:12.5px}
+.figs.overview img{aspect-ratio:auto;object-fit:contain;background:#fff;border:1px solid var(--rule)}
+.figs.overview .ph{aspect-ratio:16/9}
+
+.brcred{display:block;margin-top:4px;font-size:10.5px;color:var(--soft);text-align:right;letter-spacing:.02em}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(18,20,24,.88);display:none;align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex}
+.lb figure{max-width:min(1100px,93vw);display:flex;flex-direction:column;align-items:center}
+.lb img{max-width:100%;max-height:76vh;width:auto;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:10px;background:#15171B}
+.lb figcaption{color:#E8EAEE;font-size:14.5px;line-height:1.6;margin-top:16px;text-align:center;max-width:50em}
+.lb figcaption b{color:#fff}
+.lb .x{position:fixed;top:16px;right:22px;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;opacity:.8}
+.lb .x:hover{opacity:1}
+figure[data-fig][data-src] img,#modalBody figure img{cursor:zoom-in}
+
+/* supporting materials toggle */
+.matbtn{font:inherit;font-size:13px;font-weight:700;letter-spacing:.01em;color:var(--accent);background:var(--tint);border:1.5px solid var(--accent);border-radius:100px;padding:7px 17px;cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:8px;transition:background .15s,color .15s}
+.matbtn:hover{background:var(--accent);color:#fff}
+.matbtn:hover .cnt{background:rgba(255,255,255,.22);color:#fff}
+.matbtn .cnt{font-size:11px;font-weight:700;background:#fff;border-radius:100px;padding:1px 7px;color:var(--accent)}
+.matbtn i{font-style:normal;font-size:9px;transition:transform .16s}
+.matbtn.on i{transform:rotate(180deg)}
+.figs.folded{display:none}
+.card .figs{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* empty photo slots stay hidden until a photo is added */
+figure[data-fig]:not([data-src]){display:none}
 
 /* modal */
 .modal{position:fixed;inset:0;z-index:90;background:rgba(26,29,35,.5);display:none;align-items:center;justify-content:center;padding:24px}
@@ -203,45 +236,10 @@ figcaption b{color:var(--ink);font-weight:600}
 .fine{margin-top:40px;border-top:1px solid var(--rule);padding-top:18px;font-size:12.5px;color:var(--faint)}
 
 /* ============ EDIT MODE ============ */
-.eb{display:none}
-body.editing .eb{display:inline-flex}
-body.editing [contenteditable="true"]{outline:1.5px dashed rgba(124,58,237,.35);outline-offset:3px;border-radius:4px}
-body.editing [contenteditable="true"]:focus{outline:2px solid var(--edit);background:#FAF7FF}
-body.editing figure{position:relative}
-body.editing .ph{cursor:pointer;border-color:var(--edit);background:#FAF7FF}
-body.editing figure img{cursor:pointer;outline:1.5px dashed rgba(124,58,237,.4);outline-offset:3px}
-.eb{align-items:center;gap:5px;font:600 12px/1 var(--sans);background:var(--edit);color:#fff;border:0;border-radius:100px;padding:6px 12px;cursor:pointer;margin:8px 6px 0 0}
-.eb.ghost{background:#fff;color:var(--edit);border:1px solid var(--edit)}
-.eb.danger{background:#fff;color:#C4505C;border:1px solid #E7C3C7}
-.fig-del{position:absolute;top:8px;right:8px;z-index:3;margin:0;display:none}
-body.editing .fig-del{display:inline-flex}
 
-#bar{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--ink);color:#fff;display:none;align-items:center;gap:10px;padding:11px 20px;font-size:13px;flex-wrap:wrap}
-body.editing #bar{display:flex}
-#bar .t{font-weight:700}
-#bar .sp{margin-left:auto}
-#bar button{font:600 12.5px/1 var(--sans);border-radius:100px;padding:8px 15px;border:0;cursor:pointer;background:#fff;color:var(--ink)}
-#bar button.p{background:var(--edit);color:#fff}
-#bar button.g{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
-#bar .hint{color:#A8B0BD;font-size:12px}
 
-#hintbtn{position:fixed;right:18px;bottom:18px;z-index:150;background:#fff;border:1px solid var(--rule);border-radius:100px;padding:9px 15px;font:600 12.5px/1 var(--sans);color:var(--soft);cursor:pointer;box-shadow:0 4px 14px rgba(26,29,35,.1)}
-#hintbtn:hover{color:var(--ink)}
-body.editing #hintbtn{display:none}
 
-#draftbar{position:fixed;left:0;right:0;top:0;z-index:210;background:#FEF6E7;border-bottom:1px solid #F0DDB8;padding:10px 20px;display:none;align-items:center;gap:12px;font-size:13.5px;color:#6B5720}
-#draftbar button{font:600 12.5px/1 var(--sans);border-radius:100px;padding:7px 13px;border:1px solid #E0C88F;background:#fff;color:#6B5720;cursor:pointer}
 
-#dlg{position:fixed;inset:0;z-index:220;background:rgba(26,29,35,.5);display:none;align-items:center;justify-content:center;padding:24px}
-#dlg.open{display:flex}
-#dlg .in{background:#fff;border-radius:16px;padding:26px;max-width:440px;width:100%}
-#dlg h4{font-size:17px;font-weight:700;color:var(--ink)}
-#dlg p{font-size:13.5px;color:var(--soft);margin-top:6px;line-height:1.6}
-#dlg .row{margin-top:16px}
-#dlg input[type=text]{width:100%;font:400 14px var(--sans);padding:10px 12px;border:1px solid var(--rule);border-radius:9px}
-#dlg .btns{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
-#dlg button{font:600 13px/1 var(--sans);border-radius:100px;padding:10px 16px;border:0;cursor:pointer;background:var(--edit);color:#fff}
-#dlg button.g{background:#fff;color:var(--body);border:1px solid var(--rule)}
 
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;gap:30px}
@@ -253,26 +251,18 @@ body.editing #hintbtn{display:none}
   .when i{display:inline;margin-left:8px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
-@media print{.nav,#bar,#hintbtn,#draftbar,.eb{display:none!important}}
+@media print{.nav{display:none!important}}
 </style>
 </head>
 <body>
 
-<div id="draftbar" data-noexport>
-  <span>Local edits from your last session were found on this browser.</span>
-  <button id="draftRestore">Restore</button>
-  <button id="draftDiscard">Discard</button>
-</div>
-
-<nav class="nav" data-noexport-editattrs>
+<nav class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Donghee Chae</a>
     <ul>
-      <li><a class="lnk" href="#about">About</a></li>
       <li><a class="lnk" href="#research">Research</a></li>
-      <li><a class="lnk" href="#built">Built</a></li>
+      <li><a class="lnk" href="#education">Education</a></li>
       <li><a class="lnk" href="#publications">Publications</a></li>
-      <li><a class="lnk" href="#updates">Updates</a></li>
       <li><a class="lnk" href="#awards">Awards</a></li>
       <li><a class="lnk" href="#skills">Skills</a></li>
       <li><a class="lnk" href="#contact">Contact</a></li>
@@ -284,14 +274,14 @@ body.editing #hintbtn{display:none}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <p class="kicker" data-edit>Immunoengineering · Korea University</p>
-        <h1><span data-edit>Donghee</span> <em data-edit>(Joy)</em> <span data-edit>Chae</span></h1>
-        <p class="thesis" data-edit>I work on how a cell dies, how the immune system reads that death, and how a material can deliver that instruction to <b>one place, at one time</b>.</p>
-        <div class="hero-meta">
-          <span data-edit>Nano-Biomedicine Lab, Korea University</span>
+        <p class="kicker" style="color:var(--ink)">Korea University</p>
+        <h1><span>Donghee Chae</span><span class="alt">Joy Chae</span></h1>
+        <div class="thesis">
+          <p>To engineer <b>immune-instructive materials</b> for cancer and inflammatory disease.</p>
+          <p>To advance <b>science communication</b> that keeps such therapies intelligible to the public they are built for.</p>
         </div>
         <div class="hero-links">
-          <a class="pill" href="mailto:donghee7878@gmail.com">Email</a>
+          <a class="pill" href="mailto:chaedh1213@korea.ac.kr">Email</a>
           <a class="pill" href="https://www.linkedin.com/in/donghee-chae-546695364/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="pill" href="https://blog.naver.com/chaedh03" target="_blank" rel="noopener">Blog</a>
           <a class="pill" href="https://www.youtube.com/@cherish_1213" target="_blank" rel="noopener">YouTube</a>
@@ -299,32 +289,28 @@ body.editing #hintbtn{display:none}
         </div>
       </div>
       <div class="portrait">
-        <figure data-fig data-ph="A photo of you at the bench or the flow cytometer">
-          <div class="ph"><span class="plus">+</span><span class="txt">A photo of you at the bench or the flow cytometer</span></div>
+        <figure data-fig data-src="img/profile.jpg" data-ph="Portrait">
+          <div class="ph"><span class="plus">+</span><span class="txt">Portrait</span></div>
         </figure>
       </div>
     </div>
 
     <div class="chan-row">
       <a class="chan" href="#r/immunomodulation" style="--ch:var(--c1)">
-        <div class="n" data-edit>01</div>
-        <div class="t" data-edit>Stem cell-based immunomodulation</div>
-        <div class="w" data-edit>MSC · efferocytosis · macrophages</div>
+        <div class="n">01</div>
+        <div class="t">Stem cell-based immunomodulation</div>
       </a>
       <a class="chan" href="#r/nanomaterials" style="--ch:var(--c2)">
-        <div class="n" data-edit>02</div>
-        <div class="t" data-edit>Regulated cell death &amp; engineered nanomaterials</div>
-        <div class="w" data-edit>Ferroptosis · scintillation · CAR-TAM</div>
+        <div class="n">02</div>
+        <div class="t">Engineered nanomaterials</div>
       </a>
       <a class="chan" href="#r/computational" style="--ch:var(--c3)">
-        <div class="n" data-edit>03</div>
-        <div class="t" data-edit>Computational &amp; in silico modeling</div>
-        <div class="w" data-edit>ADC response · RNA-seq · docking</div>
+        <div class="n">03</div>
+        <div class="t">Bioinformatics and in silico modeling</div>
       </a>
       <a class="chan" href="#r/environmental" style="--ch:var(--c4)">
-        <div class="n" data-edit>04</div>
-        <div class="t" data-edit>Environmental exposure &amp; immune function</div>
-        <div class="w" data-edit>Pb · PCB · antigen presentation</div>
+        <div class="n">04</div>
+        <div class="t">Environmental exposure and immune function</div>
       </a>
     </div>
   </div>
@@ -332,391 +318,357 @@ body.editing #hintbtn{display:none}
 
 <main class="wrap">
 
-<section id="about">
-  <div class="sechead"><h2 data-edit>About</h2></div>
-  <p class="lede" data-edit>Senior at Korea University — health and environmental science, with a second degree in biomedical engineering. I spent 2025–2026 at the University of Iowa in the Ankrum Lab, where I ran my first project end to end. Now in the Nano-Biomedicine Lab at Korea University.</p>
-  <p class="lede" data-edit>Two ideas hold the work together. <b>Regulated cell death</b> is not an endpoint but an instruction the immune system reads. And an instruction is only useful if it <b>arrives in one place, at one time</b> — so I build particles as well as assays.</p>
-  <p class="lede" data-edit>The environmental training is not a detour. Exposure science taught me to treat immunity as something acted on from outside, which is exactly what I now ask of lead and PCBs in antigen-presenting cells.</p>
-</section>
-
-<section id="education">
-  <div class="sechead"><h2 data-edit>Education</h2></div>
-  <div class="entry" data-item>
-    <div>
-      <h3><span data-edit>Korea University</span> <span class="org" data-edit>· Seoul, Republic of Korea</span></h3>
-      <p class="role" data-edit>B.S. in Health and Environmental Science<br>B.E. in Biomedical Engineering (dual degree)</p>
-      <p data-edit>Dean's List, three semesters.</p>
-    </div>
-    <div class="when" data-edit>Mar 2022 – Feb 2027<i>expected</i></div>
-    <button class="eb danger" data-del>Delete</button>
-  </div>
-  <div class="entry" data-item>
-    <div>
-      <h3><span data-edit>University of Iowa</span> <span class="org" data-edit>· Iowa City, IA, USA</span></h3>
-      <p class="role" data-edit>Exchange Student, Roy J. Carver Department of Biomedical Engineering</p>
-      <p data-edit>Selected through the 3rd Korea–U.S. High-Tech Industry Youth Exchange Program (KIAT / MOTIE).</p>
-    </div>
-    <div class="when" data-edit>Aug 2025 – May 2026</div>
-    <button class="eb danger" data-del>Delete</button>
-  </div>
-  <button class="eb ghost" data-add="entry">+ Add entry</button>
-</section>
-
 <section id="research">
-  <div class="sechead"><h2 data-edit>Research</h2></div>
-  <p class="lede" style="margin-bottom:26px" data-edit>Grouped by the question each project asks, not by the lab it sits in. Open a channel to see the projects, my role, and the figures.</p>
+  <div class="sechead"><h2>Research</h2></div>
   <div class="themes">
     <a class="theme" href="#r/immunomodulation" style="--ch:var(--c1);--bg:var(--c1b)">
-      <div class="k" data-edit>01 · Immunomodulation</div>
-      <h3 data-edit>Stem cell-based immunomodulation</h3>
-      <p data-edit>What a monocyte becomes after it eats a dying, cytokine-licensed MSC — and how far that immunosuppressive state travels.</p>
-      <div class="kw"><span class="tag" data-edit>MSC</span><span class="tag" data-edit>Efferocytosis</span><span class="tag" data-edit>Monocyte</span><span class="tag" data-edit>T-cell suppression</span></div>
+      <div class="k">01 · Immunomodulation</div>
+      <h3>Stem cell-based immunomodulation</h3>
+      <p>Immunosuppressive capacity of mesenchymal stromal cells and their macrophage progeny.</p>
+      <div class="kw"><span class="tag">MSC</span><span class="tag">Efferocytosis</span><span class="tag">Immunosuppression</span><span class="tag">Inflammatory disease</span><span class="tag">In vitro</span></div>
       <div class="go">Open →</div>
     </a>
     <a class="theme" href="#r/nanomaterials" style="--ch:var(--c2);--bg:var(--c2b)">
-      <div class="k" data-edit>02 · Materials</div>
-      <h3 data-edit>Regulated cell death &amp; engineered nanomaterials</h3>
-      <p data-edit>Particles that decide where and when a cell dies: X-ray-triggered uncaging, iron payload as a ferroptosis switch, carriers that reprogram tumour macrophages.</p>
-      <div class="kw"><span class="tag" data-edit>Scintillation</span><span class="tag" data-edit>Ferroptosis</span><span class="tag" data-edit>CAR-TAM</span><span class="tag" data-edit>LNP</span></div>
+      <div class="k">02 · Nanomaterials</div>
+      <h3>Engineered nanomaterials</h3>
+      <p>Particles that switch a drug on only where the beam lands, and carriers that reprogram tumour macrophages.</p>
+      <div class="kw"><span class="tag">Inorganic nanoparticles</span><span class="tag">Radiation</span><span class="tag">Scintillation</span><span class="tag">CAR-TAM</span><span class="tag">PEGylation</span><span class="tag">Non-viral delivery</span></div>
       <div class="go">Open →</div>
     </a>
     <a class="theme" href="#r/computational" style="--ch:var(--c3);--bg:var(--c3b)">
-      <div class="k" data-edit>03 · Computation</div>
-      <h3 data-edit>Computational &amp; in silico modeling</h3>
-      <p data-edit>Two questions answered on a machine first: who responds to an ADC, and which molecule a particle should carry.</p>
-      <div class="kw"><span class="tag" data-edit>RNA-seq</span><span class="tag" data-edit>GEO</span><span class="tag" data-edit>AutoDock Vina</span><span class="tag" data-edit>R</span></div>
+      <div class="k">03 · Bioinformatics</div>
+      <h3>Bioinformatics and in silico modeling</h3>
+      <p>Who responds to an antibody drug conjugate, and which molecule a particle should carry.</p>
+      <div class="kw"><span class="tag">ADC</span><span class="tag">RNA-seq</span><span class="tag">Docking</span><span class="tag">AutoDock Vina</span><span class="tag">R</span></div>
       <div class="go">Open →</div>
     </a>
     <a class="theme" href="#r/environmental" style="--ch:var(--c4);--bg:var(--c4b)">
-      <div class="k" data-edit>04 · Environment</div>
-      <h3 data-edit>Environmental exposure &amp; immune function</h3>
-      <p data-edit>What lead and PCBs do to the cells that present antigen — from a dish to a national exposure cohort.</p>
-      <div class="kw"><span class="tag" data-edit>Lead (Pb)</span><span class="tag" data-edit>MHC-I</span><span class="tag" data-edit>PCB inhalation</span><span class="tag" data-edit>Risk assessment</span></div>
+      <div class="k">04 · Environment</div>
+      <h3>Environmental exposure and immune function</h3>
+      <p>Toxicants as modifiers of antigen presentation, read from a single dish up to a national cohort.</p>
+      <div class="kw"><span class="tag">Lead (Pb)</span><span class="tag">PCBs</span><span class="tag">PFAS</span><span class="tag">MHC-I</span><span class="tag">Epidemiological statistics</span></div>
       <div class="go">Open →</div>
     </a>
   </div>
 </section>
 
-<section id="built">
-  <div class="sechead"><h2 data-edit>Built in the lab</h2></div>
-  <p class="lede" style="margin-bottom:24px" data-edit>Two pieces of equipment I designed rather than ordered — both because what we needed was not in a catalogue.</p>
-  <div class="cards" data-list>
-    <div class="card" data-item>
-      <h3 data-edit>Murine inhalation exposure housing</h3>
-      <div class="when2" data-edit>Ankrum Lab × Adamcakova-Dodd Lab, University of Iowa · 2026</div>
-      <p data-edit>Designed the housing that delivers a controlled PCB1254 aerosol to mice, then ran the study through necropsy, multi-organ harvest, and PCR.</p>
-      <div class="figs" style="grid-template-columns:1fr">
-        <figure data-fig data-ph="The exposure housing you built, ideally beside the CAD drawing">
-          <div class="ph"><span class="plus">+</span><span class="txt">The exposure housing you built, ideally beside the CAD drawing</span></div>
-          <figcaption data-edit>Exposure chamber, as built.</figcaption>
-        </figure>
+<section id="education">
+  <div class="sechead"><h2>Education</h2></div>
+  <div>
+    <div class="entry">
+      <div>
+        <h3><span>Korea University</span> <span class="org">· Seoul, Republic of Korea</span></h3>
+        <p>B.S. in Health and Environmental Science. B.E. in Biomedical Engineering, dual degree, admitted Nov 2023.</p>
       </div>
-      <button class="eb danger" data-del>Delete</button>
+      <div class="when">Mar 2022 – Feb 2027 (expected)</div>
     </div>
-    <div class="card" data-item>
-      <h3 data-edit>VBG sampling adapter</h3>
-      <div class="when2" data-edit>Senior Design, University of Iowa → ResearchThon Excellence Award · 2026</div>
-      <p data-edit>An adapter that minimizes air contamination during venous blood gas sampling — clinical problem to working prototype.</p>
-      <div class="figs" style="grid-template-columns:1fr">
-        <figure data-fig data-ph="Rhino render plus the printed prototype in hand">
-          <div class="ph"><span class="plus">+</span><span class="txt">Rhino render plus the printed prototype in hand</span></div>
-          <figcaption data-edit>Adapter render and printed prototype.</figcaption>
-        </figure>
+    <div class="entry">
+      <div>
+        <h3><span>University of Iowa</span> <span class="org">· Iowa City, IA, USA</span></h3>
+        <p>Exchange student, Roy J. Carver Department of Biomedical Engineering.</p>
       </div>
-      <button class="eb danger" data-del>Delete</button>
+      <div class="when">Aug 2025 – May 2026</div>
     </div>
   </div>
-  <button class="eb ghost" data-add="card">+ Add item</button>
+
+  <div class="sub-h">Built in the lab</div>
+  <div>
+    <div class="entry">
+      <div>
+        <h3><span>VBG sampling adapter</span> <span class="org">· Senior Design, University of Iowa</span></h3>
+        <p>An adapter that minimizes air contamination during venous blood gas sampling, taken from clinical problem to working prototype. Excellence Award, ResearchThon 2026.</p>
+        <div class="figs supp">
+          <figure data-fig data-src="img/vbg-adapter.jpg" data-ph="VBG sampling adapter">
+            <div class="ph"><span class="plus">+</span><span class="txt">VBG sampling adapter</span></div>
+            <figcaption>Adapter design and prototype. Venous blood gas samples are contaminated by air entering during transfer, which shifts the measured values. The adapter closes that path.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="when">2026</div>
+    </div>
+  </div>
 </section>
 
 <section id="publications">
-  <div class="sechead"><h2 data-edit>Publications</h2></div>
+  <div class="sechead"><h2>Publications</h2></div>
 
-  <div class="pubgrp" data-edit>Under review</div>
-  <div data-list>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b>, D. del Bosque Siller, J. N. Liszewski, R. Byrd, M. V. Schrodt, R. M. Behan-Bush, and J. A. Ankrum*</span>
-      <span class="ti" data-edit>Cytokine pre-licensing of mesenchymal stromal cells amplifies the efferocytic immunosuppressive response of monocytes and their macrophage progeny</span>
-      <div class="vn"><span class="dot" style="--ch:var(--c1)"></span><span data-edit>Under review, 2026</span> · <a href="#r/immunomodulation">Channel 01</a></div>
-      <button class="eb danger" data-del>Delete</button>
+  <div class="pubgrp">Under review</div>
+  <div>
+    <div class="pub">
+      <span class="au"><b>D. Chae</b>, D. del Bosque Siller, J. N. Liszewski, R. Byrd, M. V. Schrodt, R. M. Behan-Bush, and J. A. Ankrum*</span>
+      <span class="ti">Cytokine pre-licensing of mesenchymal stromal cells amplifies the efferocytic immunosuppressive response of monocytes and their macrophage progeny</span>
+      <div class="vn"><span class="dot" style="--ch:var(--c1)"></span><span>Under review, 2026</span> · <a href="#r/immunomodulation">Immunomodulation</a></div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b>, M. Kim, Y. Y. Hwang, C. You, W. Ju, I. Noh*, and M. Kang*</span>
-      <span class="ti" data-edit>Beyond ex vivo CAR-T therapies through in vivo programming and targeted delivery</span>
-      <div class="vn"><span class="dot" style="--ch:var(--c2)"></span><span data-edit>Review · under review, 2026</span> · <a href="#r/nanomaterials">Channel 02</a></div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au"><b>D. Chae</b>, M. Kim, Y. Y. Hwang, C. You, W. Ju, I. Noh*, and M. Kang*</span>
+      <span class="ti">Beyond ex vivo CAR-T therapies through in vivo programming and targeted delivery</span>
+      <div class="vn"><span class="dot" style="--ch:var(--c2)"></span><span>Review · under review, 2026</span> · <a href="#r/nanomaterials">Materials</a></div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit>J. Jeong†, <b>D. Chae</b>†, J. Lee, S. Park, M. A. Miller, and M. Kang*</span>
-      <span class="ti" data-edit>Radiation-responsive nanomaterials: mechanistic foundations and emerging frontiers in cancer theranostics</span>
-      <div class="vn"><span class="dot" style="--ch:var(--c2)"></span><span data-edit>Review · under review, 2026</span> · <a href="#r/nanomaterials">Channel 02</a></div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au">J. Jeong, <b>D. Chae</b>, J. Lee, S. Park, M. A. Miller, and M. Kang*</span>
+      <span class="ti">Radiation-responsive nanomaterials: mechanistic foundations and emerging frontiers in cancer theranostics</span>
+      <div class="vn"><span class="dot" style="--ch:var(--c2)"></span><span>Review · under review, 2026</span> · <a href="#r/nanomaterials">Materials</a></div>
     </div>
   </div>
-  <button class="eb ghost" data-add="pub">+ Add publication</button>
 
-  <div class="pubgrp" data-edit>In preparation</div>
-  <div data-list>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b> and M. Kang*</span>
-      <span class="ti" data-edit>X-ray-activated scintillating nanoparticles for local uncaging of an IL-2-mimetic immunomodulator in solid tumors</span>
-      <div class="vn"><span class="dot" style="--ch:var(--c2)"></span><span data-edit>In preparation, 2026</span></div>
-      <button class="eb danger" data-del>Delete</button>
+  <div class="pubgrp">In preparation</div>
+  <div>
+    <div class="pub">
+      <span class="au">A. Adamcakova-Dodd, H.-J. Lehmler, X. Jing, H. Wang, A. Klingelhutz, J. A. Ankrum, <b>D. Chae</b>, D. May, and P. S. Thorne*</span>
+      <span class="ti">Subacute inhalation exposure to PCB1254 combined with a Western diet alters metabolic and pulmonary inflammatory responses in mice</span>
+      <div class="vn"><span class="dot" style="--ch:var(--c4)"></span><span>In preparation, 2026</span></div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit>A. Adamcakova-Dodd, H.-J. Lehmler, X. Jing, H. Wang, A. Klingelhutz, J. A. Ankrum, <b>D. Chae</b>, D. May, and P. S. Thorne*</span>
-      <span class="ti" data-edit>Subacute inhalation exposure to PCB1254 combined with a Western diet alters metabolic and pulmonary inflammatory responses in mice</span>
-      <div class="vn"><span class="dot" style="--ch:var(--c4)"></span><span data-edit>In preparation, 2026</span></div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au">S. Liu, F. Haider, <b>D. Chae</b>, L. Kim, R. Byrd, J. A. Ankrum, and Y. Imai*</span>
+      <span class="ti">A role of alpha cell fatty acid metabolism in glucagon secretion</span>
+      <div class="vn"><span>In preparation, 2026</span></div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit>S. Liu, Y. Imai, <b>D. Chae</b>, et al.</span>
-      <span class="ti" data-edit>A role of alpha cell fatty acid metabolism in glucagon secretion</span>
-      <div class="vn"><span data-edit>In preparation, 2026</span></div>
-      <button class="eb danger" data-del>Delete</button>
-    </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit>J. Gong, H. Kang, J. Kang, J. Kim, Y. Jin, <b>D. Chae</b>, J. Jung, and Y. Choi*</span>
-      <span class="ti" data-edit>Health effects of heavy metal exposure in Korean adults: a review of national biomonitoring data</span>
-      <div class="vn"><span class="dot" style="--ch:var(--c4)"></span><span data-edit>In preparation, 2026</span></div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au">J. Gong, H. Kang, J. Kang, J. Kim, Y. Jin, <b>D. Chae</b>, J. Jung, and Y. Choi*</span>
+      <span class="ti">Health effects of heavy metal exposure in Korean adults: a review of national biomonitoring data</span>
+      <div class="vn"><span class="dot" style="--ch:var(--c4)"></span><span>In preparation, 2026</span></div>
     </div>
   </div>
-  <button class="eb ghost" data-add="pub">+ Add publication</button>
-  <p class="foot" data-edit>† Equal contribution · * Corresponding author</p>
+  <p class="foot">* Corresponding author</p>
 </section>
 
 <section id="presentations">
-  <div class="sechead"><h2 data-edit>Conference presentations</h2></div>
-  <div data-list>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b>, D. del Bosque Siller, and J. A. Ankrum</span>
-      <span class="ti" data-edit>Cytokine pre-licensed MSCs elicit an enhanced efferocytic response from monocytes leading to improved T-cell suppression</span>
-      <div class="vn" data-edit>ISCT 2026 Annual Meeting · abstract published in <i>Cytotherapy</i> · <a href="https://doi.org/10.1016/j.jcyt.2026.102825" target="_blank" rel="noopener">doi</a></div>
-      <button class="eb danger" data-del>Delete</button>
+  <div class="sechead"><h2>Conference presentations</h2></div>
+  <div>
+    <div class="pub">
+      <span class="au"><b>D. Chae</b> and M. Kang, et al.</span>
+      <span class="ti">Efferocytosis of mesenchymal stromal cells potentiates an immunosuppressive monocyte phenotype that endures after macrophage differentiation</span>
+      <div class="vn">KSBM 2026, Korean Society for Biomaterials · Busan, Korea · September 2026 (expected) · Poster</div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b></span>
-      <span class="ti" data-edit>Efferocytosis of mesenchymal stromal cells potentiates an immunosuppressive monocyte phenotype that endures after macrophage differentiation</span>
-      <div class="vn" data-edit>KSBM 2026, Korean Society for Biomaterials · Busan, September 2026 · Poster</div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au">S. Liu, F. Haider, <b>D. Chae</b>, L. Kim, R. Byrd, J. A. Ankrum, and Y. Imai*</span>
+      <span class="ti">A role of alpha cell fatty acid metabolism in glucagon secretion</span>
+      <div class="vn">Midwest Islet Club 2026 · Madison, WI · May 2026</div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit>S. Liu, Y. Imai, <b>D. Chae</b>, et al.</span>
-      <span class="ti" data-edit>A role of alpha cell fatty acid metabolism in glucagon secretion</span>
-      <div class="vn" data-edit>Midwest Islet Club 2026 · abstract accepted</div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au"><b>D. Chae</b></span>
+      <span class="ti">Cytokine pre-licensing of mesenchymal stromal cells and monocyte efferocytosis</span>
+      <div class="vn">Research Open House 2026, College of Engineering, University of Iowa · Iowa City, IA · April 2026 · Poster</div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b> and H. Yang</span>
-      <span class="ti" data-edit>Non-viral intron knock-ins unlock splicing-controlled CAR-T cell therapies</span>
-      <div class="vn" data-edit>K-BioX Summit 2025 · Yonsei University, May 2025 · Poster, <b>Grand Award</b></div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au"><b>D. Chae</b>, D. del Bosque Siller, and J. A. Ankrum</span>
+      <span class="ti">Cytokine pre-licensed MSCs elicit an enhanced efferocytic response from monocytes leading to improved T-cell suppression</span>
+      <div class="vn">ISCT 2026 Annual Meeting · Dublin, Ireland · February 2026 · abstract published in <i>Cytotherapy</i> · <a href="https://doi.org/10.1016/j.jcyt.2026.102825" target="_blank" rel="noopener">doi</a></div>
     </div>
-    <div class="pub" data-item>
-      <span class="au" data-edit><b>D. Chae</b></span>
-      <span class="ti" data-edit>Cytokine pre-licensing of mesenchymal stromal cells and monocyte efferocytosis</span>
-      <div class="vn" data-edit>Research Open House 2026, College of Engineering, University of Iowa · Poster</div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="pub">
+      <span class="au"><b>D. Chae</b> and H. Yang</span>
+      <span class="ti">Non-viral intron knock-ins unlock splicing-controlled CAR-T cell therapies</span>
+      <div class="vn">K-BioX Summit 2025 · Seoul, Korea · May 2025 · Poster, <b>Grand Award</b> · Advisors: Siyeon Rhee and Theodore Roth, Stanford University</div>
     </div>
   </div>
-  <button class="eb ghost" data-add="pub">+ Add presentation</button>
 
-  <div class="figs" style="margin-top:26px" data-list>
-    <figure data-fig data-item data-ph="ISCT 2026 poster, full size">
-      <div class="ph"><span class="plus">+</span><span class="txt">ISCT 2026 poster, full size</span></div>
-      <figcaption data-edit><b>ISCT 2026</b> — link the PDF here too.</figcaption>
-      <button class="eb danger fig-del" data-del>×</button>
+  <div class="sub-h">Posters and presentations</div>
+  <div class="figs supp">
+    <figure data-fig data-src="img/isct-roh-1.jpg" data-ph="Presenting the ISCT 2026 poster">
+      <div class="ph"><span class="plus">+</span><span class="txt">Presenting the ISCT 2026 poster</span></div>
+      <figcaption>Presenting the cytokine pre-licensing work, ISCT 2026 / Research Open House 2026.</figcaption>
     </figure>
-    <figure data-fig data-item data-ph="K-BioX Summit 2025 poster (Grand Award)">
-      <div class="ph"><span class="plus">+</span><span class="txt">K-BioX Summit 2025 poster (Grand Award)</span></div>
-      <figcaption data-edit><b>K-BioX Summit 2025</b> — Grand Award.</figcaption>
-      <button class="eb danger fig-del" data-del>×</button>
+    <figure data-fig data-src="img/isct-roh-2.jpg" data-ph="ISCT 2026 poster session">
+      <div class="ph"><span class="plus">+</span><span class="txt">ISCT 2026 poster session</span></div>
+      <figcaption>Poster session.</figcaption>
     </figure>
-    <figure data-fig data-item data-ph="You presenting at the poster, mid-explanation">
-      <div class="ph"><span class="plus">+</span><span class="txt">You presenting at the poster, mid-explanation</span></div>
-      <figcaption data-edit><b>Presenting</b> at Research Open House, Iowa.</figcaption>
-      <button class="eb danger fig-del" data-del>×</button>
+    <figure data-fig data-src="img/kbiox-1.jpg" data-ph="K-BioX Summit 2025 poster">
+      <div class="ph"><span class="plus">+</span><span class="txt">K-BioX Summit 2025 poster</span></div>
+      <figcaption>Review poster on non-viral intron knock-ins, K-BioX Summit 2025. Grand Award.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/kbiox-2.jpg" data-ph="Mentoring session with Prof. Theodore Roth">
+      <div class="ph"><span class="plus">+</span><span class="txt">Mentoring session with Prof. Theodore Roth</span></div>
+      <figcaption>Mentoring session with Prof. Theodore Roth, Stanford University.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/kbiox-3.jpg" data-ph="K-BioX Summit 2025 poster session">
+      <div class="ph"><span class="plus">+</span><span class="txt">K-BioX Summit 2025 poster session</span></div>
+      <figcaption>K-BioX Summit 2025, Seoul.</figcaption>
     </figure>
   </div>
-  <button class="eb ghost" data-add="fig">+ Add photo slot</button>
-</section>
-
-<section id="updates">
-  <div class="sechead"><h2 data-edit>Updates</h2></div>
-  <p class="lede" style="margin-bottom:24px" data-edit>Short notes on what is happening in the lab.</p>
-  <div class="posts" data-list>
-    <article class="post" data-item>
-      <div class="pd" data-edit>August 2026</div>
-      <h3 data-edit>Starting the radiation-activated nanoparticle project</h3>
-      <p data-edit>Wrote the synthesis protocol for the core/shell scintillator this month. The interesting part is not the particle — it is that the trigger is the radiation beam the patient is already receiving.</p>
-      <div class="figs" data-list>
-        <figure data-fig data-item data-ph="A photo or figure for this post">
-          <div class="ph"><span class="plus">+</span><span class="txt">A photo or figure for this post</span></div>
-          <figcaption data-edit>Caption.</figcaption>
-          <button class="eb danger fig-del" data-del>×</button>
-        </figure>
-      </div>
-      <button class="eb ghost" data-add="fig">+ Add photo</button>
-      <button class="eb danger" data-del>Delete post</button>
-    </article>
-  </div>
-  <button class="eb ghost" data-add="post">+ Add post</button>
 </section>
 
 <section id="awards">
-  <div class="sechead"><h2 data-edit>Awards &amp; scholarships</h2></div>
-  <div data-list>
-    <div class="award" data-item>
-      <div><h3 data-edit>President's Award, Korea Institute for Advancement of Technology (KIAT)</h3>
-      <p data-edit>Most outstanding student of the Korea–U.S. High-Tech Industry Youth Exchange Support Program.</p></div>
-      <div class="amt" data-edit>May 2026</div>
-      <button class="eb danger" data-del>Delete</button>
+  <div class="sechead"><h2>Scholarships &amp; awards</h2></div>
+  <div>
+    <div class="award">
+      <div><h3>Udeok Foundation Scholarship <span style="font-weight:400;color:var(--soft)">· Hanil Cement</span></h3>
+      <p>Merit- and need-based, KRW 4,500,000 per semester over four semesters, from the junior year through graduation.</p></div>
+      <div class="amt">Mar 2024 – Graduation</div>
     </div>
-    <div class="award" data-item>
-      <div><h3 data-edit>Minister's Award, Ministry of Trade, Industry and Energy (MOTIE)</h3>
-      <p data-edit>For science communication as a member of the 3rd KORUS 70 Press Corps, a six-member national team.</p></div>
-      <div class="amt" data-edit>Jan 2026</div>
-      <button class="eb danger" data-del>Delete</button>
-    </div>
-    <div class="award" data-item>
-      <div><h3 data-edit>Excellence Award, ResearchThon — AI BioX ConfEX Grand Summit</h3>
-      <p data-edit><i>“Development of an Adapter System to Minimize Air Contamination during Venous Blood Gas (VBG) Sampling.”</i></p></div>
-      <div class="amt" data-edit>Jan 2026</div>
-      <button class="eb danger" data-del>Delete</button>
-    </div>
-    <div class="award" data-item>
-      <div><h3 data-edit>Grand Award, Best Poster Presentation — K-BioX Summit 2025</h3></div>
-      <div class="amt" data-edit>Jun 2025</div>
-      <button class="eb danger" data-del>Delete</button>
-    </div>
-    <div class="award" data-item>
-      <div><h3 data-edit>Final Outstanding Team, B.I.O. Biotechnology Joint Academic Society</h3>
-      <p data-edit>Korea and Yonsei University.</p></div>
-      <div class="amt" data-edit>Feb 2025</div>
-      <button class="eb danger" data-del>Delete</button>
-    </div>
-    <div class="award" data-item>
-      <div><h3 data-edit>Woodeok Foundation Scholarship <span style="font-weight:400;color:var(--soft)">· Hanil Cement</span></h3>
-      <p data-edit>Merit- and need-based, KRW 4,500,000 per semester over four semesters, from the junior year through graduation.</p></div>
-      <div class="amt" data-edit>2025 – Grad.</div>
-      <button class="eb danger" data-del>Delete</button>
-    </div>
-    <div class="award" data-item>
-      <div><h3 data-edit>Korea–U.S. High-Tech Industry Youth Exchange Scholarship <span style="font-weight:400;color:var(--soft)">· KIAT / MOTIE</span></h3>
-      <p data-edit>USD 9,000 for a two-semester research exchange at the University of Iowa.</p></div>
-      <div class="amt" data-edit>2025 – 2026</div>
-      <button class="eb danger" data-del>Delete</button>
+    <div class="award">
+      <div><h3>Korea–U.S. High-Tech Industry Youth Exchange Scholarship <span style="font-weight:400;color:var(--soft)">· KIAT / MOTIE</span></h3>
+      <p>USD 9,000 for a two-semester research exchange at the University of Iowa.</p></div>
+      <div class="amt">May 2025 – May 2026</div>
     </div>
   </div>
-  <button class="eb ghost" data-add="award">+ Add award</button>
+
+  <div class="sub-h">Awards &amp; honours</div>
+  <div>
+    <div class="award">
+      <div><h3>President's Award, Korea Institute for Advancement of Technology (KIAT)</h3>
+      <p>Most outstanding student of the Korea–U.S. High-Tech Industry Youth Exchange Support Program.</p></div>
+      <div class="amt">May 2026</div>
+    </div>
+    <div class="award">
+      <div><h3>Minister's Award, Ministry of Trade, Industry and Energy (MOTIE)</h3>
+      <p>For science communication as a member of the 3rd KORUS 70 Press Corps.</p></div>
+      <div class="amt">Jan 2026</div>
+    </div>
+    <div class="award">
+      <div><h3>Excellence Award, ResearchThon, AI BioX ConfEX Grand Summit</h3>
+      <p><i>“Development of an Adapter System to Minimize Air Contamination during Venous Blood Gas (VBG) Sampling.”</i></p></div>
+      <div class="amt">Jan 2026</div>
+    </div>
+    <div class="award">
+      <div><h3>Final Outstanding Team, B.I.O. Biotechnology Joint Academic Society</h3>
+      <p>Korea University and Yonsei University.</p></div>
+      <div class="amt">Jun 2025</div>
+    </div>
+    <div class="award">
+      <div><h3>Grand Award, Best Poster Presentation, K-BioX Summit 2025</h3>
+      <p>Yonsei University × Rutgers University × HTAN × G1's Lab.</p></div>
+      <div class="amt">May 2025</div>
+    </div>
+    <div class="award">
+      <div><h3>Outstanding Team, National Climate Initiative Competition</h3>
+      <p>COCF (Our Future), non-profit foundation.</p></div>
+      <div class="amt">Sep 2024</div>
+    </div>
+  </div>
+
+  <div class="sub-h">Certificates and citations</div>
+  <div class="figs supp">
+    <figure data-fig data-src="img/award-motie-minister.jpg" data-ph="Minister's Award, Ministry of Trade, Industry and Energy">
+      <div class="ph"><span class="plus">+</span><span class="txt">Minister's Award, Ministry of Trade, Industry and Energy</span></div>
+      <figcaption><b>Minister's Award</b>, Ministry of Trade, Industry and Energy, January 2026.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/award-korus70-press.jpg" data-ph="KORUS 70 Press Corps certificate">
+      <div class="ph"><span class="plus">+</span><span class="txt">KORUS 70 Press Corps certificate</span></div>
+      <figcaption><b>Press Corps Member</b>, 3rd KORUS 70 cohort, certificate of completion.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/award-researchthon.jpg" data-ph="ResearchThon Excellence Award">
+      <div class="ph"><span class="plus">+</span><span class="txt">ResearchThon Excellence Award</span></div>
+      <figcaption><b>Excellence Award</b>, ResearchThon, AI BioX ConfEX Grand Summit, January 2026.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/award-bio.jpg" data-ph="B.I.O. Final Outstanding Team award">
+      <div class="ph"><span class="plus">+</span><span class="txt">B.I.O. Final Outstanding Team award</span></div>
+      <figcaption><b>Final Outstanding Team</b>, B.I.O. Joint Academic Society, team BMN2, June 2025.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/award-kbiox-grand.jpg" data-ph="K-BioX Summit 2025 Grand Award">
+      <div class="ph"><span class="plus">+</span><span class="txt">K-BioX Summit 2025 Grand Award</span></div>
+      <figcaption><b>Grand Award</b>, best poster presentation, K-BioX Summit 2025.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/cert-cocf.jpg" data-ph="Climate Scouts certificate, COCF">
+      <div class="ph"><span class="plus">+</span><span class="txt">Climate Scouts certificate, COCF</span></div>
+      <figcaption><b>Climate Scouts</b>, 9th cohort, COCF.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/cert-ehs.jpg" data-ph="EHS Society Vice President certificate">
+      <div class="ph"><span class="plus">+</span><span class="txt">EHS Society Vice President certificate</span></div>
+      <figcaption><b>Vice President</b>, Environmental Health Science Society, Korea University.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/cert-simtomi.jpg" data-ph="SIMTOMI Global Ambassador certificate">
+      <div class="ph"><span class="plus">+</span><span class="txt">SIMTOMI Global Ambassador certificate</span></div>
+      <figcaption><b>Global Ambassador</b>, SIMTOMI, Mediark.</figcaption>
+    </figure>
+    <figure data-fig data-src="img/cert-adsp.jpg" data-ph="ADsP certificate, Korea Data Agency">
+      <div class="ph"><span class="plus">+</span><span class="txt">ADsP certificate, Korea Data Agency</span></div>
+      <figcaption><b>ADsP</b>, Advanced Data Analytics Semi-Professional, Korea Data Agency, March 2025.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <section id="skills">
-  <div class="sechead"><h2 data-edit>Technical proficiency</h2></div>
-  <p class="lede" style="margin-bottom:24px" data-edit>Ordered by how well I can explain the method, not how often I have run it. Open one to see the raw output.</p>
-  <div class="skillgrid" data-list>
+  <div class="sechead"><h2>Technical proficiency</h2></div>
+  <p class="lede" style="margin-bottom:24px">Grouped the way my CV groups them. Open any card for the full method list and the raw output where I have it.</p>
+  <div class="skillgrid">
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Immunology &amp; cell therapy assays</h3><span class="lv" data-edit>Efferocytosis, T-cell suppression, macrophage phenotyping</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Cell culture</h3><span class="lv">Primary human isolation, MSC, iPSC, macrophage lines</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Efferocytosis assays, T-cell suppression by CFSE dilution, macrophage polarization and phenotyping, migration assays, Annexin V/PI, LDH and CCK-8 viability, intracellular ROS, immunostaining.</span>
-        <span class="kwx" data-edit>Efferocytosis · CFSE suppression · Polarization · Annexin V/PI · CCK-8 · ROS</span>
-        <span class="fx" data-ph="Efferocytosis assay image — labelled apoptotic cells inside a macrophage|img/skills/efferocytosis.png"></span>
-        <span class="fx" data-ph="CFSE dilution histograms|img/skills/cfse.png"></span>
+        <span class="d">Human umbilical cord derived MSC, primary PBMC and monocyte isolation, THP-1 and THP-1 derived macrophages, DC2.4, NR8383, cardiomyocytes, iPSC, adipocyte dedifferentiation.</span>
+        <span class="kwx">ucMSC · PBMC isolation · THP-1 · DC2.4 · NR8383 · iPSC</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Cell culture &amp; primary cells</h3><span class="lv" data-edit>Primary human isolation, MSC, iPSC, macrophage lines</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Functional assays</h3><span class="lv">Efferocytosis, T-cell suppression, macrophage phenotyping</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Human umbilical cord-derived MSC, primary PBMC and monocyte isolation, adipocyte dedifferentiation, THP-1 and THP-1-derived macrophages, DC2.4, NR8383, cardiomyocytes, iPSC.</span>
-        <span class="kwx" data-edit>ucMSC · PBMC isolation · THP-1 · DC2.4 · NR8383 · iPSC</span>
-        <span class="fx" data-ph="You at the biosafety cabinet, or a phase-contrast image of a healthy culture|img/skills/culture.jpg"></span>
+        <span class="d">Efferocytosis assays, T-cell suppression by CFSE dilution, macrophage polarization and phenotyping, migration assays, Annexin V and PI, LDH and CCK-8 viability, intracellular ROS.</span>
+        <span class="kwx">Efferocytosis · CFSE suppression · Polarization · Migration · CCK-8 · ROS</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Flow cytometry &amp; panel design</h3><span class="lv" data-edit>Multicolour panels, CytoFLEX, full FlowJo pipeline</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Immunoassays</h3><span class="lv">Multicolour flow panels, FlowJo, kit-free ELISA, SDS-PAGE, Western blot</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Panel design accounting for excitation, emission and spillover; BD and CytoFLEX operation; compensation; full FlowJo analysis. The five-colour monocyte/macrophage panel in my first-author project is my own design.</span>
-        <span class="kwx" data-edit>Panel design · Spillover planning · CytoFLEX · Compensation · FlowJo</span>
-        <span class="fx" data-ph="Your panel design sheet — fluorophore, laser and filter assignments|img/skills/panel-design.png"></span>
-        <span class="fx" data-ph="FlowJo gating tree screenshot|img/skills/flowjo.png"></span>
+        <span class="d">Multicolour flow cytometry on CytoFLEX and BD platforms, panel design accounting for excitation, emission and spillover, compensation, and full FlowJo analysis. ELISA including kit-free assays assembled from individually sourced antibody pairs and coating antigens, indirect competitive ELISA development, SDS-PAGE and Western blot, immunocytochemistry, Bradford and BCA, Zeba desalting and dialysis.</span>
+        <span class="kwx">Panel design · Spillover planning · CytoFLEX · FlowJo · Kit-free ELISA · SDS-PAGE · Western blot · Bradford / BCA</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Immunoassays</h3><span class="lv" data-edit>ELISA, including kit-free assays built from scratch</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Molecular biology</h3><span class="lv">Nucleic acid work, RT-qPCR, plasmid preparation</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>ELISA including kit-free assays assembled from individually sourced antibody pairs and coating antigens, indirect competitive ELISA development, Bradford and BCA, Zeba desalting and dialysis.</span>
-        <span class="kwx" data-edit>Kit-free ELISA · Competitive ELISA · Bradford / BCA · Zeba desalting</span>
-        <span class="fx" data-ph="An ELISA plate mid-development, or your standard curve|img/skills/elisa.jpg"></span>
+        <span class="d">Nucleic acid extraction from cells and tissue, RT-PCR and qPCR, primer design, plasmid preparation, electroporation.</span>
+        <span class="kwx">RNA / DNA extraction · RT-qPCR · Primer design · Plasmid prep · Electroporation</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>In vivo &amp; molecular biology</h3><span class="lv" data-edit>Inhalation exposure, necropsy, qPCR</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>In vivo</h3><span class="lv">Inhalation exposure, necropsy, multi-organ harvest</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Murine inhalation exposure system design and operation, whole-animal exposure studies, necropsy and multi-organ harvest, tissue processing through nucleic acid extraction; RT-PCR and qPCR, primer design, electroporation.</span>
-        <span class="kwx" data-edit>Inhalation exposure · Necropsy · Organ harvest · RT-qPCR · Electroporation</span>
-        <span class="fx" data-ph="The exposure housing you designed|img/devices/inhalation-housing.jpg"></span>
+        <span class="d">Murine inhalation exposure studies, necropsy and multi organ harvest, brain tissue dissection and primary brain cell isolation, tissue processing through nucleic acid extraction.</span>
+        <span class="kwx">Inhalation exposure · Necropsy · Organ harvest · Brain dissection</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Nanomaterial synthesis</h3><span class="lv" data-edit>Core/shell scintillators, silica, iron oxide, LNP</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Nanomaterials</h3><span class="lv">Core/shell scintillators, silica, iron oxide, LNP</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Core/shell lanthanide scintillating nanoparticles, mesoporous silica and iron oxide nanoparticles, carboxydextran conjugation and surface functionalization (APTES, maleimide, thiol), LNP and PEI polyplex formulation, DLS/ELS, NanoDrop, Ferrozine assay.</span>
-        <span class="kwx" data-edit>Core/shell synthesis · Mesoporous silica · Surface chemistry · LNP / PEI · DLS / ELS</span>
-        <span class="fx" data-ph="Your synthesis setup — heating block, stirring, glassware|img/skills/synthesis-bench.jpg"></span>
-        <span class="fx" data-ph="DLS output screen|img/skills/dls.png"></span>
+        <span class="d">Core and shell lanthanide scintillating nanoparticles, mesoporous silica and iron oxide nanoparticles, carboxydextran conjugation and surface functionalization with APTES, maleimide and thiol chemistry, LNP and PEI polyplex formulation, pre-PEGylated NLS-EEP synthesis. Characterization by DLS and ELS, NanoDrop, and Ferrozine assay.</span>
+        <span class="kwx">Core/shell synthesis · Mesoporous silica · Surface chemistry · LNP / PEI · DLS / ELS · Ferrozine</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Imaging</h3><span class="lv" data-edit>Confocal, live-cell trackers, lipid staining</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Imaging</h3><span class="lv">Confocal, live-cell trackers, lipid staining</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Confocal microscopy, fluorescence live-cell imaging with membrane and organelle trackers (DiO, LysoTracker, GFP/DAPI), lipid staining with Oil Red O and BODIPY.</span>
-        <span class="kwx" data-edit>Confocal · LysoTracker · DiO · Oil Red O · BODIPY · ImageJ</span>
-        <span class="fx" data-ph="Your best confocal image|img/skills/confocal.png"></span>
+        <span class="d">Confocal microscopy, fluorescence live cell imaging with membrane and organelle trackers such as DiO and LysoTracker, GFP and DAPI, lipid staining with Oil Red O and BODIPY.</span>
+        <span class="kwx">Confocal · LysoTracker · DiO · Oil Red O · BODIPY</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Bioinformatics</h3><span class="lv" data-edit>R, bulk RNA-seq, GEO datasets, ADsP certified</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Data analysis</h3><span class="lv">R, bulk RNA-seq, GEO datasets, ADsP certified</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>R for bulk RNA-seq and public GEO dataset analysis, differential expression, gene module construction; MATLAB, SPSS, cohort study design. ADsP certified, Korea Data Agency, 2025.</span>
-        <span class="kwx" data-edit>R · GEO · Differential expression · MATLAB · SPSS · ADsP</span>
-        <span class="fx" data-ph="A plot you generated in R, with the code visible if possible|img/skills/r-analysis.png"></span>
+        <span class="d">R for bulk RNA-seq and public GEO dataset analysis, differential expression, gene module construction. MATLAB, SPSS, and cohort study design. ADsP certified by the Korea Data Agency, March 2025.</span>
+        <span class="kwx">R · GEO · Differential expression · MATLAB · SPSS · ADsP</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>In silico drug discovery</h3><span class="lv" data-edit>AlphaFold structures, docking, virtual screening</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>In silico</h3><span class="lv">AlphaFold structures, docking, virtual screening</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Structure-based drug repurposing: AlphaFold-derived receptor structures, hotspot identification, AutoDock Vina virtual screening, Rosetta refinement to narrow candidates before wet-lab validation.</span>
-        <span class="kwx" data-edit>AlphaFold · AutoDock Vina · Hotspot analysis · Rosetta</span>
-        <span class="fx" data-ph="Docking pose render|img/skills/docking.png"></span>
+        <span class="d">Structure based drug repurposing using AlphaFold derived receptor structures, hotspot identification, AutoDock Vina virtual screening, and Rosetta refinement to narrow candidates before wet lab validation.</span>
+        <span class="kwx">AlphaFold · AutoDock Vina · Hotspot analysis · Rosetta</span>
       </span>
     </button>
 
-    <button class="skill" data-item data-skill>
-      <span class="tx"><h3 data-edit>Design &amp; visualization</h3><span class="lv" data-edit>Rhino 3D, BioRender, ImageJ, Adobe</span></span>
+    <button class="skill" data-skill>
+      <span class="tx"><h3>Visualization</h3><span class="lv">BioRender, Rhino 3D, ImageJ, Affinity</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d" data-edit>Rhino 3D for cellular structures, medical devices and biomechanical components for 3D printing; BioRender for scientific figures; ImageJ; Affinity and Adobe for video and layout.</span>
-        <span class="kwx" data-edit>Rhino 3D · 3D printing · BioRender · ImageJ · Adobe</span>
-        <span class="fx" data-ph="A Rhino 3D model screenshot|img/skills/rhino.png"></span>
+        <span class="d">BioRender for scientific figures, Rhino 3D for cellular structures, medical devices and biomechanical components destined for 3D printing, ImageJ for image quantification, Affinity for layout and video.</span>
+        <span class="kwx">BioRender · Rhino 3D · 3D printing · ImageJ · Affinity</span>
       </span>
     </button>
 
@@ -724,125 +676,177 @@ body.editing #hintbtn{display:none}
 </section>
 
 <section id="outreach">
-  <div class="sechead"><h2 data-edit>Science communication</h2></div>
-  <p class="lede" style="margin-bottom:24px" data-edit>Research that never leaves the lab helps nobody. Four years of explaining science to people who are not scientists.</p>
-  <div class="cards" data-list>
-    <div class="card" data-item>
-      <h3 data-edit>Press Corps Member — KORUS 70</h3>
-      <div class="when2" data-edit>Ministry of Trade, Industry and Energy · 3rd cohort · 2025–2026</div>
-      <p data-edit>Video and written coverage of Korea–U.S. research exchange for a general audience — lab visits, researcher interviews, field reporting. Received the <b>Minister's Award (MOTIE)</b>.</p>
-      <div class="figs" style="grid-template-columns:1fr" data-list>
-        <figure data-fig data-item data-ph="A thumbnail from your KORUS 70 coverage, or you filming on site">
-          <div class="ph"><span class="plus">+</span><span class="txt">A thumbnail from your KORUS 70 coverage, or you filming on site</span></div>
-          <figcaption data-edit><a href="https://www.youtube.com/@cherish_1213" target="_blank" rel="noopener">Watch the coverage →</a></figcaption>
-          <button class="eb danger fig-del" data-del>×</button>
+  <div class="sechead"><h2>Science communication</h2></div>
+  <p class="lede" style="margin-bottom:24px">Research that never leaves the lab helps nobody. Four years of explaining science to people who are not scientists.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Press Corps Member, KORUS 70</h3>
+      <div class="when2">Ministry of Trade, Industry and Energy · 3rd cohort · Jul 2025 – May 2026</div>
+      <p>Video and written coverage of Korea and U.S. research exchange for a general audience, built from lab visits, researcher interviews, and field reporting. Received the <b>Minister's Award</b> from the Ministry of Trade, Industry and Energy.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/award-motie-minister.jpg" data-ph="Minister's Award, Ministry of Trade, Industry and Energy">
+          <div class="ph"><span class="plus">+</span><span class="txt">Minister's Award, Ministry of Trade, Industry and Energy</span></div>
+          <figcaption>Minister's Award. <a href="https://www.youtube.com/@cherish_1213" target="_blank" rel="noopener">Watch the coverage →</a></figcaption>
+        </figure>
+        <figure data-fig data-src="img/kiat-talk.jpg" data-ph="Sharing the exchange experience at the KIAT scholar session">
+          <div class="ph"><span class="plus">+</span><span class="txt">Sharing the exchange experience at the KIAT scholar session</span></div>
+          <figcaption>Invited talk to the 3rd KIAT cohort on using an exchange year for research.</figcaption>
         </figure>
       </div>
-      <button class="eb danger" data-del>Delete</button>
     </div>
-    <div class="card" data-item>
-      <h3 data-edit>Global Ambassador, SIMTOMI</h3>
-      <div class="when2" data-edit>Mediark, medical AI healthcare startup · Fall 2025</div>
-      <p data-edit>Video content and marketing campaigns for a medical AI app, built around narrowing gaps in access to care. Represented the platform to international student communities.</p>
-      <div class="figs" style="grid-template-columns:1fr" data-list>
-        <figure data-fig data-item data-ph="A campaign still or the app screen you produced content around">
-          <div class="ph"><span class="plus">+</span><span class="txt">A campaign still or the app screen you produced content around</span></div>
-          <figcaption data-edit>SIMTOMI campaign work.</figcaption>
-          <button class="eb danger fig-del" data-del>×</button>
+    <div class="card">
+      <h3>Global Ambassador, SIMTOMI</h3>
+      <div class="when2">Mediark, medical AI healthcare startup · Aug – Oct 2025</div>
+      <p>Video content and marketing campaigns for a medical AI app, built around narrowing gaps in access to care. Represented the platform to international student communities.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/simtomi-1.jpg" data-ph="SIMTOMI campaign content">
+          <div class="ph"><span class="plus">+</span><span class="txt">SIMTOMI campaign content</span></div>
+          <figcaption>Campaign content for SIMTOMI.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/simtomi-2.jpg" data-ph="SIMTOMI activity">
+          <div class="ph"><span class="plus">+</span><span class="txt">SIMTOMI activity</span></div>
+          <figcaption>SIMTOMI outreach.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/cert-simtomi.jpg" data-ph="SIMTOMI Global Ambassador certificate">
+          <div class="ph"><span class="plus">+</span><span class="txt">SIMTOMI Global Ambassador certificate</span></div>
+          <figcaption>Global Ambassador certificate.</figcaption>
         </figure>
       </div>
-      <button class="eb danger" data-del>Delete</button>
     </div>
-    <div class="card" data-item>
-      <h3 data-edit>Independent channels</h3>
-      <div class="when2" data-edit>YouTube · Brunch · Naver blog · 2024–present</div>
-      <p data-edit>Self-built channels on lab research, studying abroad, and how undergraduates actually get into a lab. Feature writer, Korea University Alumni Magazine.</p>
+    <div class="card">
+      <h3>Independent channels</h3>
+      <div class="when2">YouTube · Brunch · Naver blog · 2024–present</div>
+      <p>Self-built channels on lab research, studying abroad, and how undergraduates actually get into a lab. Feature writer, Korea University Alumni Magazine.</p>
       <div class="kw">
         <a class="tag" href="https://www.youtube.com/@cherish_1213" target="_blank" rel="noopener">YouTube ↗</a>
         <a class="tag" href="https://blog.naver.com/chaedh03" target="_blank" rel="noopener">Blog ↗</a>
       </div>
-      <button class="eb danger" data-del>Delete</button>
+    </div>
+    <div class="card">
+      <h3>Climate Policy Researcher, Climate Scouts</h3>
+      <div class="when2">COCF, non-profit foundation · 9th cohort · May – Sep 2024</div>
+      <p>Taught carbon reduction to elementary and middle school students, and submitted a carbon credit policy proposal to the Ministry of Environment. The team was named an <b>Outstanding Team</b> in the National Climate Initiative Competition.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/cocf-activity.jpg" data-ph="Carbon credit policy proposal slides">
+          <div class="ph"><span class="plus">+</span><span class="txt">Carbon credit policy proposal slides</span></div>
+          <figcaption>Carbon credit policy proposal, Ministry of Environment.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/volunteer-education.jpg" data-ph="Carbon reduction class for school students">
+          <div class="ph"><span class="plus">+</span><span class="txt">Carbon reduction class for school students</span></div>
+          <figcaption>Carbon reduction class for school students.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/cert-cocf.jpg" data-ph="Climate Scouts certificate">
+          <div class="ph"><span class="plus">+</span><span class="txt">Climate Scouts certificate</span></div>
+          <figcaption>Climate Scouts, 9th cohort.</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
-  <button class="eb ghost" data-add="card">+ Add item</button>
 
-  <div class="sub-h" data-edit>Teaching &amp; mentoring</div>
-  <div data-list>
-    <div class="entry" data-item>
+  <div class="sub-h">Teaching &amp; mentoring</div>
+  <div>
+    <div class="entry">
       <div>
-        <h3><span data-edit>Academic Consultant</span> <span class="org" data-edit>· Modeun Education</span></h3>
-        <p data-edit>Research portfolios, inquiry report design, personal statements, and admissions interviews. I build one-to-one curricula that turn current primary literature into projects a sixteen-year-old can actually run.</p>
+        <h3><span>Academic Consultant</span> <span class="org">· Modeun Education</span></h3>
+        <p>Research portfolios, inquiry report design, personal statements, and admissions interviews. I build one to one curricula that turn current primary literature into projects a sixteen year old can actually run.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/consulting.jpg" data-ph="One to one consulting session">
+          <div class="ph"><span class="plus">+</span><span class="txt">One to one consulting session</span></div>
+          <figcaption>One to one consulting session.</figcaption>
+        </figure>
       </div>
-      <div class="when" data-edit>2024 – Present</div>
-      <button class="eb danger" data-del>Delete</button>
+      </div>
+      <div class="when">Dec 2023 – Present</div>
     </div>
-    <div class="entry" data-item>
+    <div class="entry">
       <div>
-        <h3><span data-edit>Mathematics Instructor</span> <span class="org" data-edit>· Megastudy</span></h3>
-        <p data-edit>Over 200 students across 15 schools, online and in person. Built lecture materials, problem sets, and video content for the national e-learning platform.</p>
+        <h3><span>Mathematics Instructor</span> <span class="org">· Megastudy</span></h3>
+        <p>Over 200 students across 10 schools, online and in person. Built lesson plans, lecture materials, and visual content for the national e-learning platform.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/megastudy.jpg" data-ph="Teaching a class">
+          <div class="ph"><span class="plus">+</span><span class="txt">Teaching a class</span></div>
+          <figcaption>Classroom session, Megastudy.</figcaption>
+        </figure>
       </div>
-      <div class="when" data-edit>May 2022 – Dec 2024</div>
-      <button class="eb danger" data-del>Delete</button>
+      </div>
+      <div class="when">May 2022 – Dec 2024</div>
     </div>
   </div>
-  <button class="eb ghost" data-add="entry">+ Add entry</button>
-  <div class="figs" style="margin-top:20px" data-list>
-    <figure data-fig data-item data-ph="You teaching — at a whiteboard, or a classroom looking at your slide">
-      <div class="ph"><span class="plus">+</span><span class="txt">You teaching — at a whiteboard, or a classroom looking at your slide</span></div>
-      <figcaption data-edit>Classroom session.</figcaption>
-      <button class="eb danger fig-del" data-del>×</button>
-    </figure>
-  </div>
-  <button class="eb ghost" data-add="fig">+ Add photo slot</button>
 </section>
 
 <section id="life">
-  <div class="sechead"><h2 data-edit>Beyond the lab</h2></div>
-  <div class="cards" data-list>
-    <div class="card" data-item>
-      <h3 data-edit>TRUSS — Korea University student rock band</h3>
-      <div class="when2" data-edit>Lead guitarist &amp; organizing committee · 2022–2024</div>
-      <p data-edit>Electric guitar across six live productions in two years, plus organizing committee for rehearsals, venue logistics, and stage production.</p>
-      <div class="figs" style="grid-template-columns:1fr" data-list>
-        <figure data-fig data-item data-ph="Mid-performance, stage lighting, guitar in hand">
-          <div class="ph"><span class="plus">+</span><span class="txt">Mid-performance, stage lighting, guitar in hand</span></div>
-          <figcaption data-edit>Live, 2024.</figcaption>
-          <button class="eb danger fig-del" data-del>×</button>
+  <div class="sechead"><h2>Beyond the lab</h2></div>
+  <div class="cards">
+    <div class="card">
+      <h3>Volunteering</h3>
+      <div class="when2">World Vision · CHA Gangnam Medical Center · IHCO · Jan 2024 – present</div>
+      <p>English and Korean translation for sponsored children's letters, plus workshop leadership for new volunteers. Pediatric and emergency department support, and monthly rural mobile clinic visits.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/volunteer-translation.jpg" data-ph="Translation volunteering for sponsored children">
+          <div class="ph"><span class="plus">+</span><span class="txt">Translation volunteering for sponsored children</span></div>
+          <figcaption>English and Korean translation, World Vision.</figcaption>
         </figure>
       </div>
-      <button class="eb danger" data-del>Delete</button>
     </div>
-    <div class="card" data-item>
-      <h3 data-edit>Volunteering</h3>
-      <div class="when2" data-edit>World Vision · CHA Gangnam Medical Center · IHCO · 2024–present</div>
-      <p data-edit>English–Korean translation for sponsored children's letters, and workshop leadership for new volunteers. Pediatric and emergency support, plus monthly rural mobile clinic visits.</p>
-      <div class="figs" style="grid-template-columns:1fr" data-list>
-        <figure data-fig data-item data-ph="Mobile clinic or hospital volunteering — no identifiable patients">
-          <div class="ph"><span class="plus">+</span><span class="txt">Mobile clinic or hospital volunteering — no identifiable patients</span></div>
-          <figcaption data-edit>Rural mobile clinic.</figcaption>
-          <button class="eb danger fig-del" data-del>×</button>
+
+    <div class="card">
+      <h3>Project Coordinator, B.I.O. Joint Academic Society</h3>
+      <div class="when2">Korea University and Yonsei University · Feb 2025 – Jun 2025</div>
+      <p>Led team BMN2 through an interdisciplinary immunology literature review, running the reading list and the discussion sessions. The team was named a Final Outstanding Team in June 2025.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/award-bio.jpg" data-ph="B.I.O. Final Outstanding Team award">
+          <div class="ph"><span class="plus">+</span><span class="txt">B.I.O. Final Outstanding Team award</span></div>
+          <figcaption>Final Outstanding Team, team BMN2, June 2025.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/cert-bio.jpg" data-ph="B.I.O. 6th cohort certificate">
+          <div class="ph"><span class="plus">+</span><span class="txt">B.I.O. 6th cohort certificate</span></div>
+          <figcaption>Team leader, BMN2, B.I.O. 6th cohort.</figcaption>
         </figure>
       </div>
-      <button class="eb danger" data-del>Delete</button>
     </div>
-    <div class="card" data-item>
-      <h3 data-edit>Leadership</h3>
-      <div class="when2" data-edit>2023–present</div>
-      <p data-edit>Project Coordinator, B.I.O. Joint Academic Society (Korea and Yonsei University), leading team BMN2 on a biomechanics project. Previously Vice President, Environmental Health Science Society, and Climate Policy Researcher at COCF.</p>
-      <button class="eb danger" data-del>Delete</button>
+
+    <div class="card">
+      <h3>Vice President, Environmental Health Science Society</h3>
+      <div class="when2">Korea University · Mar 2024 – Jan 2025</div>
+      <p>Directed the society across the three fields of industrial health and safety, organising public health campaigns and campus wide risk assessment projects.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/cert-ehs.jpg" data-ph="EHS Society certificate">
+          <div class="ph"><span class="plus">+</span><span class="txt">EHS Society certificate</span></div>
+          <figcaption>Environmental Health Science Society, Korea University.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>TRUSS, Korea University student rock band</h3>
+      <div class="when2">Lead guitarist and organizing committee · Mar 2023 – Jan 2025</div>
+      <p>Electric guitar across six live productions in two years, plus organizing committee work for rehearsals, venue logistics, and stage production.</p>
+      <div class="figs supp">
+        <figure data-fig data-src="img/truss-1.jpg" data-ph="Live performance">
+          <div class="ph"><span class="plus">+</span><span class="txt">Live performance</span></div>
+          <figcaption>Live on stage. TRUSS.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/truss-2.jpg" data-ph="Live performance">
+          <div class="ph"><span class="plus">+</span><span class="txt">Live performance</span></div>
+        </figure>
+        <figure data-fig data-src="img/truss-3.jpg" data-ph="Live performance">
+          <div class="ph"><span class="plus">+</span><span class="txt">Live performance</span></div>
+        </figure>
+        <figure data-fig data-src="img/truss-4.jpg" data-ph="The band">
+          <div class="ph"><span class="plus">+</span><span class="txt">The band</span></div>
+        </figure>
+      </div>
     </div>
   </div>
-  <button class="eb ghost" data-add="card">+ Add item</button>
 </section>
 
 </main>
 
 <footer class="contact" id="contact">
   <div class="wrap">
-    <h2 data-edit>Get in touch</h2>
+    <h2>Get in touch</h2>
     <div class="cols">
-      <div><div class="lbl">Email</div><a href="mailto:donghee7878@gmail.com">donghee7878@gmail.com</a></div>
-      <div><div class="lbl">University</div><a href="mailto:chaedh1213@korea.ac.kr">chaedh1213@korea.ac.kr</a></div>
+      <div><div class="lbl">Email</div><a href="mailto:chaedh1213@korea.ac.kr">chaedh1213@korea.ac.kr</a></div>
       <div><div class="lbl">Profiles</div>
         <a href="https://www.linkedin.com/in/donghee-chae-546695364/" target="_blank" rel="noopener">LinkedIn</a> ·
         <a href="https://www.youtube.com/@cherish_1213" target="_blank" rel="noopener">YouTube</a> ·
@@ -850,13 +854,13 @@ body.editing #hintbtn{display:none}
       </div>
       <div><div class="lbl">Document</div><a href="Donghee_Chae_CV.pdf">Curriculum vitae (PDF)</a></div>
     </div>
-    <div class="fine" data-edit>© 2026 Donghee Chae · Nano-Biomedicine Lab, Korea University</div>
+    <div class="fine">© 2026 Donghee Chae · Nano-Biomedicine Lab, Korea University</div>
   </div>
 </footer>
 
 <!-- ============ RESEARCH DETAILS ============ -->
 <div class="panel" id="panel" role="dialog" aria-modal="true">
-  <div class="panel-top" data-noexport-editattrs><div class="wrap"><button class="back" id="backBtn">← All research</button></div></div>
+  <div class="panel-top"><div class="wrap"><button class="back" id="backBtn">← All research</button></div></div>
   <div class="wrap" id="panelBody"></div>
 </div>
 
@@ -864,422 +868,280 @@ body.editing #hintbtn{display:none}
 
   <div class="theme-detail" id="d-immunomodulation" style="--ch:var(--c1);--bg:var(--c1b)">
     <div class="panel-hd">
-      <div class="k" data-edit>Channel 01</div>
-      <h2 data-edit>Stem cell-based immunomodulation</h2>
-      <p data-edit>MSCs are already used as an immunosuppressive therapy, but much of what they do happens after they die. I work on the handoff: what a monocyte becomes once it has eaten a dying MSC, and how far that state travels.</p>
+      <div class="k">01 · Immunomodulation</div>
+      <h2>Stem cell-based immunomodulation</h2>
+      <p>Immunosuppressive capacity of mesenchymal stromal cells, efferocytosis-driven immunosuppression in monocytes and their macrophage progeny, and iPSC-derived model systems.</p>
     </div>
-    <ul class="qs">
-      <div class="lbl" data-edit>Questions this channel asks</div>
-      <li data-edit data-item>Does licensing an MSC before it dies change the immune state of the cell that clears it?</li>
-      <li data-edit data-item>Does that state survive the transition from monocyte to macrophage?</li>
-      <li data-edit data-item>Can it spread to macrophages that never touched an MSC?</li>
-    </ul>
-    <div data-list>
-      <article class="proj" data-item>
+    <div class="figs overview">
+      <figure data-fig data-src="img/overview-immunomodulation.jpg" data-ph="Overview figure for stem cell-based immunomodulation">
+        <div class="ph"><span class="plus">+</span><span class="txt">Overview figure for stem cell-based immunomodulation</span></div>
+        <figcaption>Does efferocytosis of cytokine pre-licensed MSCs confer immunosuppressive function? <span class="brcred">Created with BioRender</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Cytokine pre-licensing of MSCs and monocyte efferocytosis</h3>
-          <div class="where" data-edit>Ankrum Lab, University of Iowa · PI: James Ankrum · Aug 2025 – May 2026</div></div>
-          <div class="when"><span class="status" data-edit>First author · under review</span></div>
+          <div><h3>Efferocytosis of cytokine pre-licensed MSCs</h3>
+          <div class="where">Ankrum Lab, University of Iowa · PI: James Ankrum · Aug 2025 – May 2026</div></div>
+          <div class="when"><span class="status q">First author · under review</span></div>
         </div>
-        <p class="body" data-edit>Pre-licensing is the standard way to strengthen an MSC product before infusion — but it is always evaluated on the living cell. I asked what it does to the cells that clear the MSC afterwards.</p>
-        <p class="body" data-edit>Pre-licensed MSCs drove a larger efferocytic response from primary human monocytes, and the macrophages those monocytes became were more immunosuppressive, measurable as reduced T-cell proliferation.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Wrote the protocols, ran the whole pipeline from primary cell isolation through multicolour flow cytometry, and led manuscript preparation. The five-colour panel (CD14, CD16, CD86, CD163, CD206) is my own design, including spillover planning and all FlowJo analysis.</p></div>
-        <div class="kw"><span class="tag" data-edit>Primary PBMC isolation</span><span class="tag" data-edit>Efferocytosis assay</span><span class="tag" data-edit>5-colour flow panel</span><span class="tag" data-edit>CFSE suppression</span><span class="tag" data-edit>FlowJo</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="Schematic of the pre-licensing → efferocytosis → macrophage progeny axis (BioRender)">
-            <div class="ph"><span class="plus">+</span><span class="txt">Schematic of the pre-licensing → efferocytosis → macrophage progeny axis (BioRender)</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Experimental scheme.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="A real FlowJo dot plot with your gating strategy">
-            <div class="ph"><span class="plus">+</span><span class="txt">A real FlowJo dot plot with your gating strategy</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Gating and phenotype shift.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="CFSE dilution histograms or the summary bar graph">
-            <div class="ph"><span class="plus">+</span><span class="txt">CFSE dilution histograms or the summary bar graph</span></div>
-            <figcaption data-edit><b>Fig 3.</b> Downstream T-cell suppression.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Showed that cytokine pre-licensing of MSCs elicits the efferocytic response of primary human monocytes, with downstream suppression of T-cell proliferation. I validated the five-colour phenotyping panel, quantified secreted TNF-α, IFN-γ, IL-10 and IL-4 by ELISA, and led manuscript preparation.</p>
+        <div class="kw"><span class="tag">ucMSC</span><span class="tag">Efferocytosis</span><span class="tag">Flow cytometry</span><span class="tag">CFSE suppression</span><span class="tag">ELISA</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/msc-efferocytosis.jpg" data-ph="T-cell suppression, CFSE dilution and proliferation index">
+          <div class="ph"><span class="plus">+</span><span class="txt">T-cell suppression, CFSE dilution and proliferation index</span></div>
+          <figcaption>Monocytes that cleared pre-licensed MSCs suppress T-cell proliferation more strongly than naïve controls.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/ankrum-lab-2.jpg" data-ph="Ankrum Lab, University of Iowa">
+          <div class="ph"><span class="plus">+</span><span class="txt">Ankrum Lab, University of Iowa</span></div>
+          <figcaption>Ankrum Lab, University of Iowa.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/ankrum-lab-1.jpg" data-ph="Ankrum Lab group">
+          <div class="ph"><span class="plus">+</span><span class="txt">Ankrum Lab group</span></div>
+          <figcaption>Pentacrest, Iowa City.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>MSC–macrophage co-culture: does the phenotype spread?</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University · independent project · Jun 2026 – present</div></div>
-          <div class="when"><span class="status q" data-edit>Independent · in progress</span></div>
+          <div><h3>Propagation of MSC-induced immunosuppression to macrophages</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University · independent project · Jun 2026 – present</div></div>
+          <div class="when"><span class="status q">Independent · in progress</span></div>
         </div>
-        <p class="body" data-edit>The follow-up to the Iowa work. If an efferocytic macrophage becomes immunosuppressive, does it pull its neighbours into the same state? The current hypothesis is exosome-mediated transfer to macrophages that never touched an MSC.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Wrote the project proposal and established human umbilical cord-derived MSC culture in the lab under hospital IRB approval.</p></div>
-        <div class="kw"><span class="tag" data-edit>ucMSC culture</span><span class="tag" data-edit>Co-culture</span><span class="tag" data-edit>Exosome isolation</span><span class="tag" data-edit>IRB protocol</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="Diagram of direct vs bystander macrophage arms">
-            <div class="ph"><span class="plus">+</span><span class="txt">Diagram of direct vs bystander macrophage arms</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Bystander transfer hypothesis.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="Phase-contrast image of your ucMSC culture at passage">
-            <div class="ph"><span class="plus">+</span><span class="txt">Phase-contrast image of your ucMSC culture at passage</span></div>
-            <figcaption data-edit><b>Fig 2.</b> ucMSC, established in-house.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Testing whether the immunosuppressive phenotype of efferocytic macrophages propagates to bystander macrophages through exosome-mediated transfer, by contact co-culture and by treating naïve macrophages with PL-MAC-derived exosomes.</p>
+        <div class="kw"><span class="tag">PL-MAC</span><span class="tag">Bystander effect</span><span class="tag">Exosome transfer</span><span class="tag">Co-culture</span><span class="tag">RT-qPCR</span></div>
+        <div class="figs">
+        <figure data-fig data-ph="Co-culture plate layout, or exosome isolation workflow">
+          <div class="ph"><span class="plus">+</span><span class="txt">Co-culture plate layout, or exosome isolation workflow</span></div>
+          <figcaption>Co-culture design.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Adipocyte dedifferentiation and adipose-derived ECM hydrogels</h3>
-          <div class="where" data-edit>Ankrum Lab, University of Iowa · 2026</div></div>
-          <div class="when"><span class="status q" data-edit>Contributing</span></div>
+          <div><h3>Metabolic profiling of mouse islet alpha and beta cells</h3>
+          <div class="where">Ankrum Lab × Imai Lab, University of Iowa · with Prof. Yumi Imai</div></div>
+          <div class="when"><span class="status q">Contributing · manuscript in preparation</span></div>
         </div>
-        <p class="body" data-edit>Wound healing work using dedifferentiated adipocytes and adipose-derived ECM hydrogels to modulate fibroblast behaviour.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Ran lipid staining (Oil Red O, BODIPY), fibroblast interaction assays, and image quantification.</p></div>
-        <div class="kw"><span class="tag" data-edit>Oil Red O</span><span class="tag" data-edit>BODIPY</span><span class="tag" data-edit>ECM hydrogel</span><span class="tag" data-edit>Migration assay</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="Oil Red O or BODIPY staining, before and after dedifferentiation">
-            <div class="ph"><span class="plus">+</span><span class="txt">Oil Red O or BODIPY staining, before and after dedifferentiation</span></div>
-            <figcaption data-edit><b>Fig.</b> Lipid staining across dedifferentiation.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Resolved alpha and beta cell subpopulations by puromycin signal across four mouse islet flow cytometry datasets, classifying beta cells by signal intensity and back-gating onto FSC/SSC.</p>
+        <div class="kw"><span class="tag">Mouse islets</span><span class="tag">Puromycin signal</span><span class="tag">Subpopulation gating</span><span class="tag">FlowJo</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/imai-flowjo.jpg" data-ph="FlowJo analysis of alpha and beta cell subpopulations">
+          <div class="ph"><span class="plus">+</span><span class="txt">FlowJo analysis of alpha and beta cell subpopulations</span></div>
+          <figcaption>Alpha and beta cell subpopulations resolved by puromycin signal.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
     </div>
-    <button class="eb ghost" data-add="proj">+ Add project</button>
   </div>
 
   <div class="theme-detail" id="d-nanomaterials" style="--ch:var(--c2);--bg:var(--c2b)">
     <div class="panel-hd">
-      <div class="k" data-edit>Channel 02</div>
-      <h2 data-edit>Regulated cell death and engineered nanomaterials</h2>
-      <p data-edit>A drug that works everywhere is toxic everywhere — IL-2 is the textbook case. This channel builds the particle that decides where and when the instruction arrives, and what kind of death it triggers.</p>
+      <div class="k">02 · Nanomaterials</div>
+      <h2>Engineered nanomaterials</h2>
+      <p>Radiation-responsive scintillating nanoparticles for X-ray-triggered uncaging, and non-viral polymer nanocomplexes for CAR-TAM engineering.</p>
     </div>
-    <ul class="qs">
-      <div class="lbl" data-edit>Questions this channel asks</div>
-      <li data-edit data-item>Can radiation itself be the trigger that switches a drug on, only inside the field?</li>
-      <li data-edit data-item>Is it the amount of iron a cell takes in, or the amount per carrier, that decides ferroptosis?</li>
-      <li data-edit data-item>Can a carrier reprogram the macrophages already inside a tumour instead of engineering T cells outside the body?</li>
-    </ul>
-    <div data-list>
-      <article class="proj" data-item>
+    <div class="figs overview">
+      <figure data-fig data-src="img/overview-nanomaterials.jpg" data-ph="Overview figure for engineered nanomaterials">
+        <div class="ph"><span class="plus">+</span><span class="txt">Overview figure for engineered nanomaterials</span></div>
+        <figcaption>Can radiation switch a drug on only where the beam lands? <span class="brcred">Created with BioRender</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Radiation-activated immunotherapy: scintillating nanoparticles</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University · with KIRAMS and Harvard Medical School</div></div>
-          <div class="when"><span class="status" data-edit>Lead on synthesis</span></div>
+          <div><h3>Radiation-activated immunotherapy</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University · KIRAMS and Harvard Medical School collaboration</div></div>
+          <div class="when"><span class="status q">Excellent Young Researcher Grant</span></div>
         </div>
-        <p class="body" data-edit>Systemic IL-2 reached the clinic and was stopped by toxicity. Keep the biology, remove the geography problem: load an inactivated IL-2-mimetic onto a particle, and let the radiation beam already aimed at the tumour switch it on.</p>
-        <p class="body" data-edit>The particle is a core/shell lanthanide scintillator (NaLuF₄:Nd/Tm@NaYF₄, LaF₃:Ce@LaF₃) that turns X-ray energy into UV. That UV cleaves the linker holding the payload inactive — so the drug switches on only inside the irradiated field.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Lead the particle synthesis and authored the lab synthesis protocol. Also designed the in silico repurposing workflow used to find the IL-2-mimetic the particle will carry.</p></div>
-        <div class="kw"><span class="tag" data-edit>Core/shell synthesis</span><span class="tag" data-edit>Lanthanide doping</span><span class="tag" data-edit>UV-labile linker</span><span class="tag" data-edit>DLS / ELS</span><span class="tag" data-edit>X-ray irradiation</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="The full concept in one figure: X-ray → UV → linker cleavage → active drug">
-            <div class="ph"><span class="plus">+</span><span class="txt">The full concept in one figure: X-ray → UV → linker cleavage → active drug</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Radiation-triggered uncaging.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="TEM image of your core/shell particles">
-            <div class="ph"><span class="plus">+</span><span class="txt">TEM image of your core/shell particles</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Core/shell nanoparticles, TEM.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="DLS size distribution and zeta potential plot">
-            <div class="ph"><span class="plus">+</span><span class="txt">DLS size distribution and zeta potential plot</span></div>
-            <figcaption data-edit><b>Fig 3.</b> Size distribution and surface charge.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="Emission spectrum under X-ray, showing the UV peak">
-            <div class="ph"><span class="plus">+</span><span class="txt">Emission spectrum under X-ray, showing the UV peak</span></div>
-            <figcaption data-edit><b>Fig 4.</b> Scintillation output.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Synthesized inorganic nanoparticles that convert X-ray energy into UV emission to cleave a UV-labile linker, and designed the in silico drug repurposing workflow used to identify an IL-2-mimetic docking system.</p>
+        <div class="kw"><span class="tag">Inorganic nanoparticles</span><span class="tag">Radiation</span><span class="tag">Scintillation</span><span class="tag">Core/shell synthesis</span><span class="tag">UV-labile linker</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/schlenk-line.jpg" data-ph="Schlenk line used for nanoparticle synthesis">
+          <div class="ph"><span class="plus">+</span><span class="txt">Schlenk line used for nanoparticle synthesis</span></div>
+          <figcaption>Schlenk line, core/shell synthesis.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/nanoparticle-synthesis.jpg" data-ph="Synthesis in progress, Mn oleate and iron oxide precursors">
+          <div class="ph"><span class="plus">+</span><span class="txt">Synthesis in progress, Mn oleate and iron oxide precursors</span></div>
+          <figcaption>Precursor synthesis, Mn oleate and iron oxide.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Iron payload as the ferroptosis switch</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University</div></div>
-          <div class="when"><span class="status q" data-edit>In progress</span></div>
+          <div><h3>CAR-TAM drug factory</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University × Kyung Hee University × Yale Cancer Center</div></div>
+          <div class="when"><span class="status q">In progress</span></div>
         </div>
-        <p class="body" data-edit>Ferroptosis is iron-dependent, and most delivery work optimizes how much particle a cell takes up. This tests a different variable: iron per internalized carrier. MSN–carboxydextran–iron oxide composites let uptake stay roughly constant while payload density varies, in MC38 colorectal carcinoma cells.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Surface chemistry, particle characterization, and the full assay panel: viability, intracellular ROS, Ferrozine iron quantification.</p></div>
-        <div class="kw"><span class="tag" data-edit>Mesoporous silica</span><span class="tag" data-edit>Carboxydextran conjugation</span><span class="tag" data-edit>Ferrozine assay</span><span class="tag" data-edit>Intracellular ROS</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="Synthesis scheme for MSN–Cdex–IONP">
-            <div class="ph"><span class="plus">+</span><span class="txt">Synthesis scheme for MSN–Cdex–IONP</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Composite particle design.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="Viability / ROS dose-response comparing payload density arms">
-            <div class="ph"><span class="plus">+</span><span class="txt">Viability / ROS dose-response comparing payload density arms</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Payload density vs ferroptotic response.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Developing the non-viral delivery system replacing lentiviral vectors, using PEI–plasmid nanocomplexes that deliver CRISPR-Cas9 and an HITI donor for single-step SIGLEC10 knockout and CAR knock-in.</p>
+        <div class="kw"><span class="tag">CAR-TAM</span><span class="tag">Non-viral delivery</span><span class="tag">PEGylation</span><span class="tag">PEI polyplex</span><span class="tag">CRISPR-Cas9</span></div>
+        <div class="figs">
+        <figure data-fig data-ph="LNP or polyplex formulation, or DLS output">
+          <div class="ph"><span class="plus">+</span><span class="txt">LNP or polyplex formulation, or DLS output</span></div>
+          <figcaption>Polyplex formulation.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>CAR-TAM: reprogramming tumour-associated macrophages</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University × Korea University Guro Hospital</div></div>
-          <div class="when"><span class="status q" data-edit>First-generation formulations</span></div>
+          <div><h3>Non-viral intron knock-in for splicing-controlled CAR-T</h3>
+          <div class="where">K-BioX Anteambulo Research Program · PI: Siyeon Rhee, Stanford University · Mar – Jun 2025</div></div>
+          <div class="when"><span class="status q">Grand Award, K-BioX Summit 2025</span></div>
         </div>
-        <p class="body" data-edit>CAR-T requires taking cells out of a patient, engineering them, and putting them back. CAR-TAM asks whether the macrophages already inside the tumour can be given a receptor in place — the subject of my first-author review.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Developed first-generation LNP and PEI polyplex formulations for macrophage transfection; contributing to the second-generation programme with Guro Hospital.</p></div>
-        <div class="kw"><span class="tag" data-edit>LNP formulation</span><span class="tag" data-edit>PEI polyplex</span><span class="tag" data-edit>Macrophage transfection</span><span class="tag" data-edit>mRNA delivery</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="In vivo CAR programming concept diagram from your review figure">
-            <div class="ph"><span class="plus">+</span><span class="txt">In vivo CAR programming concept diagram from your review figure</span></div>
-            <figcaption data-edit><b>Fig.</b> In vivo macrophage programming.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Investigated synthetic exon engineering to place CAR expression under splicing control, giving tunable mRNA output with no viral vector.</p>
+        <div class="kw"><span class="tag">Intron knock-in</span><span class="tag">Synthetic exon</span><span class="tag">CAR-T</span><span class="tag">Splicing control</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/kbiox-1.jpg" data-ph="K-BioX Summit 2025 poster">
+          <div class="ph"><span class="plus">+</span><span class="txt">K-BioX Summit 2025 poster</span></div>
+          <figcaption>Review poster, K-BioX Summit 2025.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/kbiox-2.jpg" data-ph="Mentoring session with Prof. Theodore Roth">
+          <div class="ph"><span class="plus">+</span><span class="txt">Mentoring session with Prof. Theodore Roth</span></div>
+          <figcaption>Mentoring session with Prof. Theodore Roth, Stanford University.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/kbiox-3.jpg" data-ph="Poster session, K-BioX Summit 2025">
+          <div class="ph"><span class="plus">+</span><span class="txt">Poster session, K-BioX Summit 2025</span></div>
+          <figcaption>Poster session, Seoul.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
-      </article>
-
-      <article class="proj" data-item>
-        <div class="proj-hd">
-          <div><h3 data-edit>Non-viral intron knock-in for splicing-controlled CAR-T</h3>
-          <div class="where" data-edit>K-BioX Anteambulo Research Program · PI: Siyeon Rhee, Stanford University · Mar – Jun 2025</div></div>
-          <div class="when"><span class="status" data-edit>Grand Award, K-BioX Summit 2025</span></div>
-        </div>
-        <p class="body" data-edit>A synthetic exon placed inside an intron lets splicing, rather than a constitutive promoter, govern CAR expression — tunable mRNA output with no viral vector.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Designed the strategy and presented as first author. Abstract selected for the proceedings; poster received the Grand Award.</p></div>
-        <div class="kw"><span class="tag" data-edit>Synthetic exon</span><span class="tag" data-edit>Intron knock-in</span><span class="tag" data-edit>Splicing control</span><span class="tag" data-edit>Non-viral delivery</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="The synthetic exon / splicing control diagram from your poster">
-            <div class="ph"><span class="plus">+</span><span class="txt">The synthetic exon / splicing control diagram from your poster</span></div>
-            <figcaption data-edit><b>Fig.</b> Splicing-controlled CAR expression.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-        </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
     </div>
-    <button class="eb ghost" data-add="proj">+ Add project</button>
   </div>
 
   <div class="theme-detail" id="d-computational" style="--ch:var(--c3);--bg:var(--c3b)">
     <div class="panel-hd">
-      <div class="k" data-edit>Channel 03</div>
-      <h2 data-edit>Computational and in silico modeling</h2>
-      <p data-edit>Two questions I would rather answer on a machine than after a year at the bench: who responds to a drug, and which molecule a particle should carry.</p>
+      <div class="k">03 · Bioinformatics</div>
+      <h2>Bioinformatics and in silico modeling</h2>
+      <p>HER2-ADC response prediction from endocytic trafficking biology, RNA-seq analysis of therapy-induced tumour immune remodeling, and structure-based drug repurposing for radiation-activated payloads.</p>
     </div>
-    <ul class="qs">
-      <div class="lbl" data-edit>Questions this channel asks</div>
-      <li data-edit data-item>Can trafficking biology, not just receptor level, predict who responds to an antibody-drug conjugate?</li>
-      <li data-edit data-item>Is there an approved molecule that already does what IL-2 does?</li>
-      <li data-edit data-item>What does the tumour immune microenvironment actually look like after irradiation?</li>
-    </ul>
-    <div data-list>
-      <article class="proj" data-item>
+    <div class="figs overview">
+      <figure data-fig data-src="img/overview-bioinformatics.jpg" data-ph="Overview figure for bioinformatics and in silico modeling">
+        <div class="ph"><span class="plus">+</span><span class="txt">Overview figure for bioinformatics and in silico modeling</span></div>
+        <figcaption>What can be decided in silico before the bench? <span class="brcred">Created with BioRender</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>HER2-ADC response prediction from trafficking biology</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University × KIST molecular imaging</div></div>
-          <div class="when"><span class="status" data-edit>Analysis complete</span></div>
+          <div><h3>HER2-ADC response prediction from trafficking biology</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University × KIST molecular imaging</div></div>
+          <div class="when"><span class="status q">In progress</span></div>
         </div>
-        <p class="body" data-edit>HER2 level is the standard biomarker for trastuzumab deruxtecan — but an ADC only works if it is internalized, trafficked, and cleaved. Two tumours with identical HER2 can behave differently for reasons downstream of binding.</p>
-        <p class="body" data-edit>I built an eight-module, 59-gene framework spanning receptor binding through lysosomal degradation and drug efflux, then screened fifteen GEO datasets in R. Cathepsin and ESCRT-family genes emerged as the strongest discriminators of response.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Built the framework, curated the modules, wrote the R analysis, and prioritized the candidates now entering imaging validation.</p></div>
-        <div class="kw"><span class="tag" data-edit>R</span><span class="tag" data-edit>GEO / bulk RNA-seq</span><span class="tag" data-edit>Differential expression</span><span class="tag" data-edit>Molecular imaging</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="The eight-module / 59-gene framework diagram">
-            <div class="ph"><span class="plus">+</span><span class="txt">The eight-module / 59-gene framework diagram</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Trafficking module framework.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="Heatmap or volcano plot across the fifteen GEO datasets">
-            <div class="ph"><span class="plus">+</span><span class="txt">Heatmap or volcano plot across the fifteen GEO datasets</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Candidate biomarker prioritization.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Analyzed GEO datasets to prioritize biomarkers of T-DXd and T-DM1 response, tracked antibody internalization and lysosomal degradation by immunocytochemistry and confocal imaging, and built a predictive mathematical model linking trafficking-gene expression to ADC response.</p>
+        <div class="kw"><span class="tag">ADC</span><span class="tag">T-DXd</span><span class="tag">T-DM1</span><span class="tag">RNA-seq</span><span class="tag">R</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/adc-bioinformatics.jpg" data-ph="Marker panel and evidence axis analysis across GEO contrasts">
+          <div class="ph"><span class="plus">+</span><span class="txt">Marker panel and evidence axis analysis across GEO contrasts</span></div>
+          <figcaption>A 127-marker, 18-module panel fixed before analysis, applied to 15 contrasts.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>In silico drug repurposing for an IL-2-mimetic payload</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University</div></div>
-          <div class="when"><span class="status q" data-edit>Screening under way</span></div>
+          <div><h3>In silico drug repurposing for an IL-2-mimetic payload</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University</div></div>
+          <div class="when"><span class="status q">Screening under way</span></div>
         </div>
-        <p class="body" data-edit>The IL-2 receptor is a hard target: three subunits, a flat interface, and recognition driven by scattered hotspot residues rather than one pocket. Designing a peptide mimic is difficult for exactly that reason.</p>
-        <p class="body" data-edit>So search what already exists. The workflow screens an approved-drug library against AlphaFold-derived structures, uses a known binder as positive control, filters on hotspot occupancy, then narrows survivors with precision docking before anything reaches a cell.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Designed the workflow with the computational team, arguing for two stages — broad virtual screening first, Rosetta-grade refinement only on the shortlist — so candidates reaching the bench are already defensible.</p></div>
-        <div class="kw"><span class="tag" data-edit>AlphaFold structures</span><span class="tag" data-edit>AutoDock Vina</span><span class="tag" data-edit>Hotspot analysis</span><span class="tag" data-edit>Rosetta refinement</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="The screening workflow flowchart">
-            <div class="ph"><span class="plus">+</span><span class="txt">The screening workflow flowchart</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Repurposing workflow.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="A 3D docking pose render showing the ligand at the interface">
-            <div class="ph"><span class="plus">+</span><span class="txt">A 3D docking pose render showing the ligand at the interface</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Predicted binding pose.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Screening an approved-drug library against AlphaFold-derived IL-2 receptor structures, filtering on hotspot occupancy and narrowing survivors by precision docking before anything reaches a cell.</p>
+        <div class="kw"><span class="tag">Docking</span><span class="tag">AutoDock Vina</span><span class="tag">AlphaFold</span><span class="tag">Hotspot analysis</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/docking-model.jpg" data-ph="Docking poses identified with AutoDock Vina">
+          <div class="ph"><span class="plus">+</span><span class="txt">Docking poses identified with AutoDock Vina</span></div>
+          <figcaption>Candidate docking poses, AutoDock Vina.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Tumour microenvironment remodeling after irradiation</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University</div></div>
-          <div class="when"><span class="status q" data-edit>Ongoing</span></div>
+          <div><h3>Tumour immune remodeling after irradiation</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University</div></div>
+          <div class="when"><span class="status q">Ongoing</span></div>
         </div>
-        <p class="body" data-edit>Public transcriptomic datasets analysed to map how tumour immune composition shifts after radiation — the biology the scintillating particle intervenes in.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Dataset selection and analysis in R, linking material design choices to immunological endpoints.</p></div>
-        <div class="kw"><span class="tag" data-edit>Public dataset analysis</span><span class="tag" data-edit>R</span><span class="tag" data-edit>Immune deconvolution</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="Immune cell composition plot before and after irradiation">
-            <div class="ph"><span class="plus">+</span><span class="txt">Immune cell composition plot before and after irradiation</span></div>
-            <figcaption data-edit><b>Fig.</b> Post-irradiation immune shift.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Public transcriptomic datasets analysed to map how tumour immune composition shifts after radiation, which is the biology the scintillating particle intervenes in.</p>
+        <div class="kw"><span class="tag">RNA-seq</span><span class="tag">Differential expression</span><span class="tag">Gene modules</span></div>
+        <div class="figs">
+        <figure data-fig data-ph="A plot generated in R">
+          <div class="ph"><span class="plus">+</span><span class="txt">A plot generated in R</span></div>
+          <figcaption>Transcriptomic analysis in R.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
     </div>
-    <button class="eb ghost" data-add="proj">+ Add project</button>
   </div>
 
   <div class="theme-detail" id="d-environmental" style="--ch:var(--c4);--bg:var(--c4b)">
     <div class="panel-hd">
-      <div class="k" data-edit>Channel 04</div>
-      <h2 data-edit>Environmental exposure and immune function</h2>
-      <p data-edit>My first degree taught me to treat the immune system as something acted on from outside. This channel runs from a dendritic cell in a dish up to a national cohort — one question at four scales.</p>
+      <div class="k">04 · Environment</div>
+      <h2>Environmental exposure and immune function</h2>
+      <p>Pb, PCBs, and PFAS as modifiers of antigen presentation and cellular immune response.</p>
     </div>
-    <ul class="qs">
-      <div class="lbl" data-edit>Questions this channel asks</div>
-      <li data-edit data-item>Does a dose of lead too low to kill a cell still break how that cell presents antigen?</li>
-      <li data-edit data-item>What does inhaled PCB do to an animal already on a Western diet?</li>
-      <li data-edit data-item>How do you turn a national disaster into a defensible risk estimate?</li>
-    </ul>
-    <div data-list>
-      <article class="proj" data-item>
+    <div class="figs overview">
+      <figure data-fig data-src="img/overview-environmental.jpg" data-ph="Overview figure for environmental exposure and immune function">
+        <div class="ph"><span class="plus">+</span><span class="txt">Overview figure for environmental exposure and immune function</span></div>
+        <figcaption>What effects do environmental hazards have on the immune system? <span class="brcred">Created with BioRender</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Lead (Pb) and MHC class I cross-presentation in dendritic cells</h3>
-          <div class="where" data-edit>Nano-Biomedicine Lab, Korea University · BRL hazardous substances project</div></div>
-          <div class="when"><span class="status q" data-edit>Study designed</span></div>
+          <div><h3>Lead (Pb) and MHC class I cross-presentation</h3>
+          <div class="where">Nano-Biomedicine Lab, Korea University · hazardous substances project</div></div>
+          <div class="when"><span class="status q">Study designed</span></div>
         </div>
-        <p class="body" data-edit>Low-dose lead pushes aberrant MHC class II to the macrophage surface by increasing vesicular exocytosis and autophagosome formation. What nobody has shown is whether that disturbance leaves antigen processing intact.</p>
-        <p class="body" data-edit>The study asks whether non-cytotoxic Pb impairs phagolysosomal processing, MHC class I cross-presentation, and antigen-specific CD8⁺ T-cell activation in DC2.4 dendritic cells.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Designed the study and wrote the proposal: rationale, dose selection below the cytotoxic threshold, and the readout panel.</p></div>
-        <div class="kw"><span class="tag" data-edit>DC2.4</span><span class="tag" data-edit>Cross-presentation</span><span class="tag" data-edit>MHC-I</span><span class="tag" data-edit>CD8⁺ activation</span><span class="tag" data-edit>Phagolysosome</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="Diagram of the antigen processing pathway with the Pb intervention point marked">
-            <div class="ph"><span class="plus">+</span><span class="txt">Diagram of the antigen processing pathway with the Pb intervention point marked</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Where lead is hypothesized to act.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="LysoTracker / confocal image of vesicular compartments">
-            <div class="ph"><span class="plus">+</span><span class="txt">LysoTracker / confocal image of vesicular compartments</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Phagolysosomal compartment imaging.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Designed a study asking whether non-cytotoxic Pb exposure impairs phagolysosomal antigen processing and antigen-specific CD8⁺ T-cell activation in DC2.4 dendritic cells.</p>
+        <div class="kw"><span class="tag">Pb</span><span class="tag">DC2.4</span><span class="tag">MHC-I</span><span class="tag">Cross-presentation</span><span class="tag">In vitro</span></div>
+        <div class="figs">
+        <figure data-fig data-ph="Antigen processing pathway with the Pb intervention point marked">
+          <div class="ph"><span class="plus">+</span><span class="txt">Antigen processing pathway with the Pb intervention point marked</span></div>
+          <figcaption>Study design.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>PCB1254 inhalation with a Western diet</h3>
-          <div class="where" data-edit>Ankrum Lab × Adamcakova-Dodd Lab, University of Iowa</div></div>
-          <div class="when"><span class="status q" data-edit>Manuscript in preparation</span></div>
+          <div><h3>Subacute PCB inhalation toxicology</h3>
+          <div class="where">Ankrum Lab × Adamcakova-Dodd Lab, University of Iowa · with Prof. Andrea Adamcakova-Dodd</div></div>
+          <div class="when"><span class="status q">Manuscript in preparation</span></div>
         </div>
-        <p class="body" data-edit>Most PCB toxicology uses oral dosing. This study used inhalation, combined with a Western diet, to read metabolic and pulmonary inflammatory endpoints together.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Designed the inhalation exposure housing, ran the study, and performed necropsy and multi-organ harvest — lung, liver, kidney, heart — through nucleic acid extraction and PCR.</p></div>
-        <div class="kw"><span class="tag" data-edit>Inhalation exposure</span><span class="tag" data-edit>Necropsy</span><span class="tag" data-edit>Multi-organ harvest</span><span class="tag" data-edit>qPCR</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="The exposure housing you designed">
-            <div class="ph"><span class="plus">+</span><span class="txt">The exposure housing you designed</span></div>
-            <figcaption data-edit><b>Fig 1.</b> Exposure system, as built.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
-          <figure data-fig data-item data-ph="Organ-level inflammatory or metabolic endpoint figure">
-            <div class="ph"><span class="plus">+</span><span class="txt">Organ-level inflammatory or metabolic endpoint figure</span></div>
-            <figcaption data-edit><b>Fig 2.</b> Multi-organ endpoints.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Ran the murine inhalation exposure study on PCB1254 combined with a Western diet, then performed necropsy and multi-organ harvest, followed by nucleic acid extraction and PCR.</p>
+        <div class="kw"><span class="tag">PCB1254</span><span class="tag">Inhalation exposure</span><span class="tag">Necropsy</span><span class="tag">RT-qPCR</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/inhalation-study-design.jpg" data-ph="PCB1254 inhalation exposure system, study design">
+          <div class="ph"><span class="plus">+</span><span class="txt">PCB1254 inhalation exposure system, study design</span></div>
+          <figcaption>Exposure system, as designed for the study.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/inhalation-system.jpg" data-ph="The inhalation exposure system in the lab">
+          <div class="ph"><span class="plus">+</span><span class="txt">The inhalation exposure system in the lab</span></div>
+          <figcaption>Inhalation exposure system.</figcaption>
+        </figure>
+        <figure data-fig data-src="img/inhalation-1.jpg" data-ph="Exposure apparatus detail">
+          <div class="ph"><span class="plus">+</span><span class="txt">Exposure apparatus detail</span></div>
+          <figcaption>Exposure apparatus.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
-
-      <article class="proj" data-item>
+      <article class="proj">
         <div class="proj-hd">
-          <div><h3 data-edit>Humidifier Disinfectant Incident: national risk assessment</h3>
-          <div class="where" data-edit>ChEEHR Lab, Korea University · PI: Yoonhyung Choi · Mar – Sep 2024</div></div>
-          <div class="when"><span class="status q" data-edit>Contributed</span></div>
+          <div><h3>National exposure cohorts</h3>
+          <div class="where">ChEEHR Lab, Korea University · PI: Yoon-Hyeong Choi · Mar – Sep 2024</div></div>
+          <div class="when"><span class="status q">Analysis complete</span></div>
         </div>
-        <p class="body" data-edit>Exposure data from one of Korea's largest environmental health disasters, analysed as part of the team supporting national risk assessment.</p>
-        <p class="body" data-edit>In the same period I completed the government-certified Environmental Health Associate programme and led a national GTX rail survey and statistical report for the Ministry of Land, Infrastructure and Transport.</p>
-        <div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Exposure data analysis and statistical reporting.</p></div>
-        <div class="kw"><span class="tag" data-edit>Exposure assessment</span><span class="tag" data-edit>Epidemiology</span><span class="tag" data-edit>SPSS</span><span class="tag" data-edit>Survey design</span></div>
-        <div class="figs" data-list>
-          <figure data-fig data-item data-ph="An exposure distribution or risk characterization figure">
-            <div class="ph"><span class="plus">+</span><span class="txt">An exposure distribution or risk characterization figure</span></div>
-            <figcaption data-edit><b>Fig.</b> Exposure distribution.</figcaption>
-            <button class="eb danger fig-del" data-del>×</button>
-          </figure>
+        <p class="body">Analyzed post-disaster exposure data from the Humidifier Disinfectant Incident for national health risk assessment, and curated heavy metal exposure data for the epidemiological analysis behind a review of national biomonitoring data.</p>
+        <div class="kw"><span class="tag">PFAS</span><span class="tag">Epidemiological statistics</span><span class="tag">Biomonitoring</span><span class="tag">SPSS</span></div>
+        <div class="figs">
+        <figure data-fig data-src="img/cheehr-lab.jpg" data-ph="ChEEHR Lab, Korea University">
+          <div class="ph"><span class="plus">+</span><span class="txt">ChEEHR Lab, Korea University</span></div>
+          <figcaption>ChEEHR Lab, Korea University.</figcaption>
+        </figure>
         </div>
-        <button class="eb ghost" data-add="fig">+ Add figure</button>
-        <button class="eb danger" data-del>Delete project</button>
       </article>
     </div>
-    <button class="eb ghost" data-add="proj">+ Add project</button>
   </div>
 
 </div>
 
-<div class="modal" id="modal" role="dialog" aria-modal="true" data-noexport-editattrs>
+<div class="modal" id="modal" role="dialog" aria-modal="true">
   <div class="modal-in"><button class="x" id="modalX" aria-label="Close">×</button><div id="modalBody"></div></div>
-</div>
-
-<button id="hintbtn" data-noexport>Ctrl + E to edit</button>
-
-<div id="bar" data-noexport>
-  <span class="t">Edit mode</span>
-  <span class="hint">Click any text to change it · click a photo box to add or replace an image</span>
-  <span class="sp"></span>
-  <button class="p" id="btnExport">Download index.html</button>
-  <button class="g" id="btnSave">Save draft</button>
-  <button class="g" id="btnDone">Done</button>
-</div>
-
-<div id="dlg" data-noexport>
-  <div class="in">
-    <h4 id="dlgTitle">Photo</h4>
-    <p id="dlgDesc"></p>
-    <div class="row">
-      <input type="file" id="dlgFile" accept="image/*">
-    </div>
-    <div class="row">
-      <input type="text" id="dlgPath" placeholder="or a path, e.g. img/research/flow-dotplot.png">
-    </div>
-    <div class="btns">
-      <button id="dlgUse">Use path</button>
-      <button class="g" id="dlgRemove">Remove photo</button>
-      <button class="g" id="dlgCancel">Cancel</button>
-    </div>
-  </div>
 </div>
 
 <script>
@@ -1303,13 +1165,13 @@ function openTheme(id){
   pBody.appendChild(el);
   panel.classList.add("open");
   panel.scrollTop=0;
-  if(!document.body.classList.contains("editing")) document.body.style.overflow="hidden";
+  if(true) document.body.style.overflow="hidden";
   return true;
 }
 function closeTheme(silent){
   if(current){ current.classList.remove("live"); details.appendChild(current); current=null; }
   panel.classList.remove("open");
-  if(!document.body.classList.contains("editing")) document.body.style.overflow="";
+  if(true) document.body.style.overflow="";
   if(!silent && location.hash.indexOf("#r/")===0) history.pushState(null,"","#research");
 }
 $("#backBtn").addEventListener("click",function(){closeTheme();});
@@ -1318,13 +1180,13 @@ function route(){
   if(h.indexOf("#r/")===0){ if(openTheme(h.slice(3))) return; }
   closeTheme(true);
 }
-window.addEventListener("hashchange",route);
+window.addEventListener("hashchange",function(){ route(); setTimeout(tidyFigs,0); });
 
 /* ---------- skills modal ---------- */
 var modal=$("#modal"), mBody=$("#modalBody");
 document.addEventListener("click",function(e){
   var sk=e.target.closest("[data-skill]");
-  if(!sk || document.body.classList.contains("editing")) return;
+  if(!sk) return;
   var det=$(".skill-detail",sk);
   var h="<h3>"+$("h3",sk).innerHTML+"</h3><div class='sub'>"+$(".lv",sk).innerHTML+"</div>";
   var d=$(".d",det); if(d) h+="<p class='d'>"+d.innerHTML+"</p>";
@@ -1346,6 +1208,74 @@ document.addEventListener("click",function(e){
 function closeModal(){ modal.classList.remove("open"); if(!panel.classList.contains("open")) document.body.style.overflow=""; }
 $("#modalX").addEventListener("click",closeModal);
 modal.addEventListener("click",function(e){ if(e.target===modal) closeModal(); });
+
+/* ---------- lightbox ---------- */
+var lb=document.createElement("div");
+lb.className="lb"; lb.setAttribute("data-noexport","");
+lb.innerHTML="<button class='x' aria-label='Close'>\u00d7</button><figure><img alt=''><figcaption></figcaption></figure>";
+document.body.appendChild(lb);
+var lbImg=lb.querySelector("img"), lbCap=lb.querySelector("figcaption");
+function openLB(src,caption){
+  lbImg.src=src; lbCap.innerHTML=caption||"";
+  lbCap.style.display=caption?"":"none";
+  lb.classList.add("open"); document.body.style.overflow="hidden";
+}
+function closeLB(){
+  lb.classList.remove("open"); lbImg.src="";
+  if(!panel.classList.contains("open") && !modal.classList.contains("open")) document.body.style.overflow="";
+}
+lb.addEventListener("click",function(e){ if(e.target===lb||e.target.closest(".x")) closeLB(); });
+document.addEventListener("click",function(e){
+  
+  if(e.target.closest(".lb")) return;
+  var img=e.target.closest("figure img");
+  if(!img) return;
+  var fig=img.closest("figure");
+  var cap=fig.querySelector("figcaption");
+  e.preventDefault(); e.stopPropagation();
+  openLB(img.getAttribute("src"), cap?cap.innerHTML:"");
+});
+
+/* ---------- supporting materials: fold photo groups, hide empty ones ---------- */
+function tidyFigs(){
+  var ed=false;
+  var pf=$(".portrait figure[data-fig]"), pw=$(".portrait");
+  if(pw){
+    var empty = pf && !pf.getAttribute("data-src") && !ed;
+    pw.style.display = empty ? "none" : "";
+    document.body.classList.toggle("no-portrait", !!empty);
+  }
+  $$(".figs").forEach(function(g){
+    if(g.closest(".lb")) return;
+    var filled=$$("figure[data-fig]",g).filter(function(f){return f.getAttribute("data-src");}).length;
+    var btn=g.previousElementSibling;
+    if(btn && !btn.classList.contains("matbtn")) btn=null;
+    var foldable = !g.classList.contains("overview") && (g.classList.contains("supp") || !!g.closest(".card, .post, .proj"));
+    if(ed){
+      g.style.display=""; g.classList.remove("folded");
+      if(btn) btn.style.display="none";
+      return;
+    }
+    if(!filled){ g.style.display="none"; if(btn) btn.style.display="none"; return; }
+    g.style.display="";
+    if(!foldable){ if(btn) btn.style.display="none"; return; }
+    if(!btn){
+      btn=document.createElement("button");
+      btn.className="matbtn"; btn.setAttribute("data-noexport","");
+      btn.innerHTML="Click to see supporting materials <span class='cnt'>"+filled+"</span><i>\u25be</i>";
+      btn.addEventListener("click",function(){
+        var open=g.classList.toggle("folded")===false;
+        btn.classList.toggle("on",open);
+        var c=$$("figure[data-fig]",g).filter(function(f){return f.getAttribute("data-src");}).length;
+        btn.innerHTML=(open?"Hide supporting materials":"Click to see supporting materials")+" <span class='cnt'>"+c+"</span><i>\u25be</i>";
+      });
+      g.parentNode.insertBefore(btn,g);
+    }
+    btn.style.display="";
+    btn.innerHTML=(g.classList.contains("folded")?"Click to see supporting materials":"Hide supporting materials")+" <span class='cnt'>"+filled+"</span><i>\u25be</i>";
+    if(!g.__init){ g.classList.add("folded"); btn.classList.remove("on"); g.__init=1; }
+  });
+}
 
 /* ---------- figure hydration: show real image if the file exists ---------- */
 function hydrate(scope){
@@ -1378,164 +1308,6 @@ function removeImage(fig){
   fig.removeAttribute("data-src");
 }
 
-/* ---------- edit mode ---------- */
-var editing=false;
-function setEdit(on){
-  editing=on;
-  document.body.classList.toggle("editing",on);
-  $$("[data-edit]").forEach(function(el){
-    if(on) el.setAttribute("contenteditable","true"); else el.removeAttribute("contenteditable");
-  });
-  document.body.style.overflow="";
-  if(on) closeModal();
-}
-$("#hintbtn").addEventListener("click",function(){setEdit(true);});
-$("#btnDone").addEventListener("click",function(){saveDraft();setEdit(false);});
-document.addEventListener("keydown",function(e){
-  if((e.ctrlKey||e.metaKey) && (e.key==="e"||e.key==="E")){ e.preventDefault(); setEdit(!editing); return; }
-  if((e.ctrlKey||e.metaKey) && (e.key==="s"||e.key==="S") && editing){ e.preventDefault(); saveDraft(); flash("Draft saved"); return; }
-  if(e.key==="Escape"){
-    if(modal.classList.contains("open")) closeModal();
-    else if($("#dlg").classList.contains("open")) closeDlg();
-    else if(panel.classList.contains("open")) closeTheme();
-  }
-});
-
-/* ---------- photo dialog ---------- */
-var dlg=$("#dlg"), dlgFig=null;
-function openDlg(fig){
-  dlgFig=fig;
-  $("#dlgDesc").textContent = fig.getAttribute("data-ph") || "";
-  $("#dlgPath").value = fig.getAttribute("data-src") || "";
-  $("#dlgFile").value = "";
-  dlg.classList.add("open");
-}
-function closeDlg(){ dlg.classList.remove("open"); dlgFig=null; }
-$("#dlgCancel").addEventListener("click",closeDlg);
-dlg.addEventListener("click",function(e){ if(e.target===dlg) closeDlg(); });
-$("#dlgRemove").addEventListener("click",function(){ if(dlgFig) removeImage(dlgFig); closeDlg(); });
-$("#dlgUse").addEventListener("click",function(){
-  var p=$("#dlgPath").value.trim();
-  if(dlgFig && p) setImage(dlgFig,p,false);
-  closeDlg();
-});
-$("#dlgFile").addEventListener("change",function(e){
-  var file=e.target.files && e.target.files[0];
-  if(!file||!dlgFig) return;
-  var fig=dlgFig;
-  var reader=new FileReader();
-  reader.onload=function(ev){
-    var im=new Image();
-    im.onload=function(){
-      var max=1400, w=im.width, h=im.height;
-      if(w>max){ h=Math.round(h*max/w); w=max; }
-      var cv=document.createElement("canvas"); cv.width=w; cv.height=h;
-      cv.getContext("2d").drawImage(im,0,0,w,h);
-      setImage(fig, cv.toDataURL("image/jpeg",0.82), false);
-      closeDlg();
-    };
-    im.src=ev.target.result;
-  };
-  reader.readAsDataURL(file);
-});
-
-document.addEventListener("click",function(e){
-  if(!editing) return;
-  var fig=e.target.closest("figure[data-fig]");
-  if(fig && (e.target.closest(".ph") || e.target.tagName==="IMG")){ e.preventDefault(); openDlg(fig); }
-});
-
-/* ---------- add / delete blocks ---------- */
-var TPL={
-  entry:'<div class="entry" data-item><div><h3><span data-edit>Title</span> <span class="org" data-edit>· Organisation</span></h3><p data-edit>What you did.</p></div><div class="when" data-edit>2026</div><button class="eb danger" data-del>Delete</button></div>',
-  card:'<div class="card" data-item><h3 data-edit>Title</h3><div class="when2" data-edit>Where · when</div><p data-edit>Description.</p><div class="figs" style="grid-template-columns:1fr" data-list><figure data-fig data-item data-ph="Add a photo"><div class="ph"><span class="plus">+</span><span class="txt">Add a photo</span></div><figcaption data-edit>Caption.</figcaption><button class="eb danger fig-del" data-del>×</button></figure></div><button class="eb ghost" data-add="fig">+ Add photo</button><button class="eb danger" data-del>Delete</button></div>',
-  pub:'<div class="pub" data-item><span class="au" data-edit><b>D. Chae</b>, co-authors</span><span class="ti" data-edit>Title of the work</span><div class="vn" data-edit>Venue, year</div><button class="eb danger" data-del>Delete</button></div>',
-  award:'<div class="award" data-item><div><h3 data-edit>Award name</h3><p data-edit>One line of detail.</p></div><div class="amt" data-edit>2026</div><button class="eb danger" data-del>Delete</button></div>',
-  fig:'<figure data-fig data-item data-ph="Add a photo"><div class="ph"><span class="plus">+</span><span class="txt">Add a photo</span></div><figcaption data-edit>Caption.</figcaption><button class="eb danger fig-del" data-del>×</button></figure>',
-  post:'<article class="post" data-item><div class="pd" data-edit>Month 2026</div><h3 data-edit>Post title</h3><p data-edit>Write the update here.</p><div class="figs" data-list><figure data-fig data-item data-ph="Add a photo"><div class="ph"><span class="plus">+</span><span class="txt">Add a photo</span></div><figcaption data-edit>Caption.</figcaption><button class="eb danger fig-del" data-del>×</button></figure></div><button class="eb ghost" data-add="fig">+ Add photo</button><button class="eb danger" data-del>Delete post</button></article>',
-  proj:'<article class="proj" data-item><div class="proj-hd"><div><h3 data-edit>Project title</h3><div class="where" data-edit>Lab, University · PI · dates</div></div><div class="when"><span class="status q" data-edit>In progress</span></div></div><p class="body" data-edit>What the project is and why it matters.</p><div class="mine"><div class="lbl" data-edit>What I did</div><p data-edit>Your specific role.</p></div><div class="kw"><span class="tag" data-edit>Method</span><span class="tag" data-edit>Method</span></div><div class="figs" data-list><figure data-fig data-item data-ph="Add a figure"><div class="ph"><span class="plus">+</span><span class="txt">Add a figure</span></div><figcaption data-edit>Caption.</figcaption><button class="eb danger fig-del" data-del>×</button></figure></div><button class="eb ghost" data-add="fig">+ Add figure</button><button class="eb danger" data-del>Delete project</button></article>'
-};
-document.addEventListener("click",function(e){
-  var add=e.target.closest("[data-add]");
-  if(add && editing){
-    e.preventDefault(); e.stopPropagation();
-    var kind=add.getAttribute("data-add");
-    var list=add.previousElementSibling;
-    while(list && !list.hasAttribute("data-list") && !list.classList.contains("figs")) list=list.previousElementSibling;
-    if(!list) return;
-    var tmp=document.createElement("div"); tmp.innerHTML=TPL[kind];
-    var node=tmp.firstElementChild;
-    list.appendChild(node);
-    if(node.scrollIntoView) node.scrollIntoView({block:"center"});
-    setEdit(true);
-    return;
-  }
-  var del=e.target.closest("[data-del]");
-  if(del && editing){
-    e.preventDefault(); e.stopPropagation();
-    var item=del.closest("[data-item]");
-    if(item && confirm("Delete this block?")) item.remove();
-  }
-},true);
-
-/* ---------- draft save / restore ---------- */
-function saveDraft(){
-  try{ localStorage.setItem(LS_KEY, JSON.stringify({t:Date.now(), html:document.body.innerHTML})); }
-  catch(err){ flash("Draft too large to save locally — download the file instead"); }
-}
-function flash(msg){
-  var b=$("#bar"); if(!b) return;
-  var h=$(".hint",b); if(!h) return;
-  var old=h.textContent; h.textContent=msg;
-  setTimeout(function(){ h.textContent=old; },2200);
-}
-$("#btnSave").addEventListener("click",function(){ saveDraft(); flash("Draft saved to this browser"); });
-
-(function checkDraft(){
-  var raw=null;
-  try{ raw=localStorage.getItem(LS_KEY); }catch(err){}
-  if(!raw) return;
-  var bar=$("#draftbar");
-  bar.style.display="flex";
-  $("#draftRestore").addEventListener("click",function(){
-    try{
-      var d=JSON.parse(raw);
-      document.body.innerHTML=d.html;
-    }catch(err){}
-    location.hash=""; window.location.reload();
-  });
-  $("#draftDiscard").addEventListener("click",function(){
-    try{ localStorage.removeItem(LS_KEY); }catch(err){}
-    bar.style.display="none";
-  });
-})();
-
-/* ---------- export ---------- */
-$("#btnExport").addEventListener("click",function(){
-  saveDraft();
-  var clone=document.documentElement.cloneNode(true);
-  clone.querySelectorAll("[data-noexport]").forEach(function(n){n.remove();});
-  clone.querySelectorAll("[contenteditable]").forEach(function(n){n.removeAttribute("contenteditable");});
-  clone.querySelectorAll(".theme-detail").forEach(function(n){
-    n.classList.remove("live");
-    var det=clone.querySelector("#details");
-    if(det && n.parentNode && n.parentNode.id==="panelBody") det.appendChild(n);
-  });
-  var pb=clone.querySelector("#panelBody"); if(pb) pb.innerHTML="";
-  var pn=clone.querySelector("#panel"); if(pn) pn.classList.remove("open");
-  var md=clone.querySelector("#modalBody"); if(md) md.innerHTML="";
-  var mo=clone.querySelector("#modal"); if(mo) mo.classList.remove("open");
-  clone.querySelector("body").classList.remove("editing");
-  var html="<!DOCTYPE html>\n"+clone.outerHTML;
-  var blob=new Blob([html],{type:"text/html"});
-  var a=document.createElement("a");
-  a.href=URL.createObjectURL(blob);
-  a.download="index.html";
-  a.click();
-  setTimeout(function(){URL.revokeObjectURL(a.href);},1500);
-  flash("Downloaded. Upload it to GitHub to publish.");
-});
-
 /* ---------- nav highlight ---------- */
 var lnks=$$(".nav a.lnk");
 if("IntersectionObserver" in window){
@@ -1550,6 +1322,7 @@ if("IntersectionObserver" in window){
 }
 
 hydrate(document);
+tidyFigs();
 route();
 })();
 </script>
