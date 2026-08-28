@@ -14,11 +14,11 @@
 :root{
   --ink:#1A1D23; --body:#3D444F; --soft:#6B7280; --faint:#9CA3AF;
   --paper:#FFFFFF; --tint:#F7F8FA; --tint2:#EEF1F6; --rule:#E4E7EC;
-  --c1:#2E9E6B; --c1b:#EAF7F0;
-  --c2:#E08A2E; --c2b:#FDF3E7;
-  --c3:#3B72C9; --c3b:#EAF1FB;
-  --c4:#C4505C; --c4b:#FBEDEE;
-  --accent:#3B72C9;
+  --c1:#2E8B72; --c1b:#E9F5F1;
+  --c2:#C0872B; --c2b:#FBF3E4;
+  --c3:#2F5C9E; --c3b:#E9EFF9;
+  --c4:#A84A5C; --c4b:#FAEDEF;
+  --accent:#1B365D;
   --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --disp:"Newsreader",Georgia,serif;
   --wrap:1060px;
@@ -35,7 +35,7 @@ h1,h2,h3{color:var(--ink);letter-spacing:-.02em}
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--rule)}
 .nav .wrap{display:flex;align-items:center;gap:24px;height:62px}
 .nav .brand{font-weight:700;font-size:16px;white-space:nowrap;text-decoration:none;color:var(--ink)}
-.nav ul{list-style:none;display:flex;gap:22px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav ul{list-style:none;display:flex;gap:18px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .nav ul::-webkit-scrollbar{display:none}
 .nav a.lnk{font-size:13.5px;font-weight:500;color:var(--soft);text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
 .nav a.lnk:hover,.nav a.lnk.on{color:var(--ink);border-bottom-color:var(--ink)}
@@ -67,7 +67,7 @@ body.no-portrait .hero-grid{grid-template-columns:1fr}
 /* sections */
 section{padding:66px 0 6px}
 .sechead{border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:26px}
-.sechead h2{font-family:var(--disp);font-size:29px;font-weight:500}
+.sechead h2{font-family:var(--disp);font-size:29px;font-weight:650}
 .lede{font-size:16.5px;line-height:1.74;color:#454C57;max-width:37em}
 .lede + .lede{margin-top:12px}
 .lede b{color:var(--ink);font-weight:600}
@@ -81,7 +81,7 @@ ul.b li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5p
 /* entries */
 .entry{display:grid;grid-template-columns:1fr 178px;gap:26px;padding:18px 0;border-bottom:1px solid var(--rule)}
 .entry:last-of-type{border-bottom:0}
-.entry h3{font-size:16px;font-weight:600}
+.entry h3{font-size:16px;font-weight:700}
 .entry h3 .org{font-weight:400;color:var(--soft)}
 .entry .role{font-family:var(--disp);font-style:italic;color:var(--soft);font-size:15px;margin-top:2px}
 .entry p{font-size:14.5px;color:#4B525C;margin-top:7px;max-width:40em}
@@ -110,7 +110,7 @@ ul.b li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5p
 .theme-detail.live{display:block}
 .panel-hd{border-left:3px solid var(--ch);padding:4px 0 4px 20px;margin:46px 0 28px}
 .panel-hd .k{font-size:12.5px;font-weight:700;color:var(--ch);letter-spacing:.05em}
-.panel-hd h2{font-family:var(--disp);font-size:clamp(30px,4.6vw,44px);font-weight:400;line-height:1.1;margin-top:8px}
+.panel-hd h2{font-family:var(--disp);font-size:clamp(30px,4.6vw,44px);font-weight:650;line-height:1.12;margin-top:8px}
 .panel-hd p{font-size:17px;line-height:1.66;color:#454C57;margin-top:14px;max-width:36em}
 .qs{background:var(--bg);border-radius:14px;padding:20px 24px;margin:0 0 40px}
 .qs .lbl{font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--ch);margin-bottom:8px}
@@ -130,7 +130,7 @@ ul.b li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5p
 .status.q{background:var(--bg);color:var(--ch)}
 
 /* figures */
-.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,168px));gap:14px;margin-top:20px}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,202px));gap:16px;margin-top:20px}
 figure{margin:0}
 .ph{border:1.5px dashed #D6DAE1;border-radius:12px;background:var(--tint);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:18px;text-align:center}
 .ph .plus{width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--faint);line-height:1}
@@ -154,7 +154,7 @@ figcaption b{color:var(--ink);font-weight:600}
 
 /* awards */
 .award{display:grid;grid-template-columns:1fr 118px;gap:22px;padding:15px 0;border-bottom:1px solid var(--rule)}
-.award h3{font-size:15.5px;font-weight:600}
+.award h3{font-size:15.5px;font-weight:700}
 .award p{font-size:14px;color:#535A64;margin-top:4px}
 .award .amt{font-size:13px;color:var(--soft);text-align:right}
 
@@ -164,7 +164,7 @@ figcaption b{color:var(--ink);font-weight:600}
 .skill:hover{border-color:#C7CDD6;box-shadow:0 5px 16px rgba(26,29,35,.06)}
 .skill:hover .pb{background:var(--ink);color:#fff;border-color:var(--ink)}
 .skill .tx{flex:1;min-width:0}
-.skill h3{font-size:14.5px;font-weight:600;line-height:1.32}
+.skill h3{font-size:14.5px;font-weight:700;line-height:1.32}
 .skill .lv{font-size:12.5px;color:var(--soft);margin-top:5px;display:block}
 .pb{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--soft);line-height:1;transition:all .16s}
 .skill-detail{display:none}
@@ -177,10 +177,10 @@ figcaption b{color:var(--ink);font-weight:600}
 .brcred{display:block;margin-top:4px;font-size:10.5px;color:var(--soft);text-align:right;letter-spacing:.02em}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:120;background:rgba(18,20,24,.88);display:none;align-items:center;justify-content:center;padding:30px}
+.lb{position:fixed;inset:0;z-index:120;background:rgba(18,20,24,.9);display:none;align-items:center;justify-content:center;padding:18px}
 .lb.open{display:flex}
-.lb figure{max-width:min(1100px,93vw);display:flex;flex-direction:column;align-items:center}
-.lb img{max-width:100%;max-height:76vh;width:auto;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:10px;background:#15171B}
+.lb figure{max-width:min(1560px,96vw);display:flex;flex-direction:column;align-items:center}
+.lb img{max-width:100%;max-height:88vh;width:auto;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:10px;background:#15171B}
 .lb figcaption{color:#E8EAEE;font-size:14.5px;line-height:1.6;margin-top:16px;text-align:center;max-width:50em}
 .lb figcaption b{color:#fff}
 .lb .x{position:fixed;top:16px;right:22px;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;opacity:.8}
@@ -212,11 +212,12 @@ figure[data-fig]:not([data-src]){display:none}
 /* cards */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
 .card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:20px}
-.card h3{font-size:15.5px;font-weight:600}
+.card h3{font-size:15.5px;font-weight:700}
 .card .when2{font-size:12.5px;color:var(--soft);margin-top:4px}
 .card p{font-size:14.5px;line-height:1.66;color:#4B525C;margin-top:9px}
 .card a{color:var(--accent)}
 .sub-h{font-size:13px;font-weight:700;color:var(--accent);margin:26px 0 12px}
+.award .amt,.entry .when{white-space:nowrap}
 
 /* posts */
 .posts{display:grid;gap:14px}
@@ -265,6 +266,8 @@ figure[data-fig]:not([data-src]){display:none}
       <li><a class="lnk" href="#publications">Publications</a></li>
       <li><a class="lnk" href="#awards">Awards</a></li>
       <li><a class="lnk" href="#skills">Skills</a></li>
+      <li><a class="lnk" href="#outreach">Outreach</a></li>
+      <li><a class="lnk" href="#life">Beyond</a></li>
       <li><a class="lnk" href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -371,11 +374,10 @@ figure[data-fig]:not([data-src]){display:none}
     </div>
   </div>
 
-  <div class="sub-h">Built in the lab</div>
   <div>
     <div class="entry">
       <div>
-        <h3><span>VBG sampling adapter</span> <span class="org">· Senior Design, University of Iowa</span></h3>
+        <h3><span>Senior Design, VBG sampling adapter</span> <span class="org">· University of Iowa</span></h3>
         <p>An adapter that minimizes air contamination during venous blood gas sampling, taken from clinical problem to working prototype. Excellence Award, ResearchThon 2026.</p>
         <div class="figs supp">
           <figure data-fig data-src="img/vbg-adapter.jpg" data-ph="VBG sampling adapter">
@@ -540,6 +542,10 @@ figure[data-fig]:not([data-src]){display:none}
 
   <div class="sub-h">Certificates and citations</div>
   <div class="figs supp">
+    <figure data-fig data-src="img/award-kiat-president.jpg" data-ph="President's Award, Korea Institute for Advancement of Technology">
+      <div class="ph"><span class="plus">+</span><span class="txt">President's Award, Korea Institute for Advancement of Technology</span></div>
+      <figcaption><b>President's Award</b>, Korea Institute for Advancement of Technology, July 2026.</figcaption>
+    </figure>
     <figure data-fig data-src="img/award-motie-minister.jpg" data-ph="Minister's Award, Ministry of Trade, Industry and Energy">
       <div class="ph"><span class="plus">+</span><span class="txt">Minister's Award, Ministry of Trade, Industry and Energy</span></div>
       <figcaption><b>Minister's Award</b>, Ministry of Trade, Industry and Energy, January 2026.</figcaption>
@@ -584,8 +590,8 @@ figure[data-fig]:not([data-src]){display:none}
 </section>
 
 <section id="skills">
-  <div class="sechead"><h2>Technical proficiency</h2></div>
-  <p class="lede" style="margin-bottom:24px">Grouped the way my CV groups them. Open any card for the full method list and the raw output where I have it.</p>
+  <div class="sechead"><h2>Skills &amp; techniques</h2></div>
+  <p class="lede" style="margin-bottom:24px">Open any card for the full method list and the raw output where I have it.</p>
   <div class="skillgrid">
 
     <button class="skill" data-skill>
@@ -603,6 +609,7 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">Efferocytosis assays, T-cell suppression by CFSE dilution, macrophage polarization and phenotyping, migration assays, Annexin V and PI, LDH and CCK-8 viability, intracellular ROS.</span>
         <span class="kwx">Efferocytosis · CFSE suppression · Polarization · Migration · CCK-8 · ROS</span>
+        <span class="fx" data-src="img/msc-efferocytosis.jpg" data-ph="T-cell suppression by CFSE dilution"></span>
       </span>
     </button>
 
@@ -612,6 +619,9 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">Multicolour flow cytometry on CytoFLEX and BD platforms, panel design accounting for excitation, emission and spillover, compensation, and full FlowJo analysis. ELISA including kit-free assays assembled from individually sourced antibody pairs and coating antigens, indirect competitive ELISA development, SDS-PAGE and Western blot, immunocytochemistry, Bradford and BCA, Zeba desalting and dialysis.</span>
         <span class="kwx">Panel design · Spillover planning · CytoFLEX · FlowJo · Kit-free ELISA · SDS-PAGE · Western blot · Bradford / BCA</span>
+        <span class="fx" data-src="img/skill-elisa.jpg" data-ph="ELISA plate development"></span>
+        <span class="fx" data-src="img/skill-sdspage.jpg" data-ph="SDS-PAGE gel"></span>
+        <span class="fx" data-src="img/imai-flowjo.jpg" data-ph="FlowJo gating of flow cytometry data"></span>
       </span>
     </button>
 
@@ -621,6 +631,8 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">Nucleic acid extraction from cells and tissue, RT-PCR and qPCR, primer design, plasmid preparation, electroporation.</span>
         <span class="kwx">RNA / DNA extraction · RT-qPCR · Primer design · Plasmid prep · Electroporation</span>
+        <span class="fx" data-src="img/skill-pcr.jpg" data-ph="PCR run"></span>
+        <span class="fx" data-src="img/skill-pcr-loading.jpg" data-ph="Loading a gel"></span>
       </span>
     </button>
 
@@ -630,15 +642,24 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">Murine inhalation exposure studies, necropsy and multi organ harvest, brain tissue dissection and primary brain cell isolation, tissue processing through nucleic acid extraction.</span>
         <span class="kwx">Inhalation exposure · Necropsy · Organ harvest · Brain dissection</span>
+        <span class="fx" data-src="img/inhalation-system.jpg" data-ph="Murine inhalation exposure system"></span>
+        <span class="fx" data-src="img/inhalation-study-design.jpg" data-ph="Exposure study design"></span>
       </span>
     </button>
 
     <button class="skill" data-skill>
-      <span class="tx"><h3>Nanomaterials</h3><span class="lv">Core/shell scintillators, silica, iron oxide, LNP</span></span>
+      <span class="tx"><h3>Nanomaterials</h3><span class="lv">Core/shell scintillators, silica, iron oxide, LNP, DLS/ELS, FT-IR</span></span>
       <span class="pb">+</span>
       <span class="skill-detail">
-        <span class="d">Core and shell lanthanide scintillating nanoparticles, mesoporous silica and iron oxide nanoparticles, carboxydextran conjugation and surface functionalization with APTES, maleimide and thiol chemistry, LNP and PEI polyplex formulation, pre-PEGylated NLS-EEP synthesis. Characterization by DLS and ELS, NanoDrop, and Ferrozine assay.</span>
-        <span class="kwx">Core/shell synthesis · Mesoporous silica · Surface chemistry · LNP / PEI · DLS / ELS · Ferrozine</span>
+        <span class="d">Core and shell lanthanide scintillating nanoparticles, mesoporous silica and iron oxide nanoparticles, carboxydextran conjugation and surface functionalization with APTES, maleimide and thiol chemistry, LNP and PEI polyplex formulation, pre-PEGylated NLS-EEP synthesis. Characterization by DLS and ELS, FT-IR, NanoDrop, and Ferrozine assay.</span>
+        <span class="kwx">Core/shell synthesis · Mesoporous silica · Surface chemistry · LNP / PEI · DLS / ELS · FT-IR · NanoDrop · Ferrozine</span>
+        <span class="fx" data-src="img/schlenk-line.jpg" data-ph="Schlenk line, core/shell synthesis"></span>
+        <span class="fx" data-src="img/nanoparticle-synthesis.jpg" data-ph="Mn oleate and iron oxide precursors"></span>
+        <span class="fx" data-src="img/skill-dls.jpg" data-ph="DLS on the Zetasizer"></span>
+        <span class="fx" data-src="img/skill-els.jpg" data-ph="ELS, zeta potential"></span>
+        <span class="fx" data-src="img/skill-nanodrop.jpg" data-ph="NanoDrop quantification"></span>
+        <span class="fx" data-src="img/skill-ftir-1.jpg" data-ph="FT-IR spectrum"></span>
+        <span class="fx" data-src="img/skill-ftir-2.jpg" data-ph="FT-IR measurement"></span>
       </span>
     </button>
 
@@ -648,6 +669,7 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">Confocal microscopy, fluorescence live cell imaging with membrane and organelle trackers such as DiO and LysoTracker, GFP and DAPI, lipid staining with Oil Red O and BODIPY.</span>
         <span class="kwx">Confocal · LysoTracker · DiO · Oil Red O · BODIPY</span>
+        <span class="fx" data-src="img/skill-confocal.jpg" data-ph="Confocal imaging with LysoTracker"></span>
       </span>
     </button>
 
@@ -657,6 +679,8 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">R for bulk RNA-seq and public GEO dataset analysis, differential expression, gene module construction. MATLAB, SPSS, and cohort study design. ADsP certified by the Korea Data Agency, March 2025.</span>
         <span class="kwx">R · GEO · Differential expression · MATLAB · SPSS · ADsP</span>
+        <span class="fx" data-src="img/adc-bioinformatics.jpg" data-ph="Marker panel analysis in R"></span>
+        <span class="fx" data-src="img/cert-adsp.jpg" data-ph="ADsP certificate, Korea Data Agency"></span>
       </span>
     </button>
 
@@ -666,6 +690,7 @@ figure[data-fig]:not([data-src]){display:none}
       <span class="skill-detail">
         <span class="d">Structure based drug repurposing using AlphaFold derived receptor structures, hotspot identification, AutoDock Vina virtual screening, and Rosetta refinement to narrow candidates before wet lab validation.</span>
         <span class="kwx">AlphaFold · AutoDock Vina · Hotspot analysis · Rosetta</span>
+        <span class="fx" data-src="img/docking-model.jpg" data-ph="Docking poses from AutoDock Vina"></span>
       </span>
     </button>
 
